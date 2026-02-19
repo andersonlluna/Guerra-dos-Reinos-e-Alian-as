@@ -807,7 +807,7 @@ function renderAliancas(data) {
         </div>
         ${scoreRow('Total', bPts, aPts, bColor, aColor, v => parseFloat(v).toFixed(0))}
         ${scoreRow('Média / membro', bAvg, aAvg, bColor, aColor, v => parseFloat(v).toFixed(1))}
-        ${scoreRow('Média Cartola', bAvgC, aAvgC, bColor, aColor, v => parseFloat(v).toFixed(2))}
+
         ${tie?'<div style="margin-top:10px;text-align:center;font-family:Cinzel,serif;color:var(--amber);font-size:0.9em;">⚖️ Empate!</div>':''}
     </div>
 
