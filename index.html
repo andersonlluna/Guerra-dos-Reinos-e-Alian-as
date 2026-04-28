@@ -83,6 +83,9 @@
         --r-md: 6px;
         --r-lg: 10px;
 
+        /* Alturas fixas */
+        --nav-height: 64px;
+
         /* Sombras */
         --sh-sm: 0 2px 8px rgba(0,0,0,.4);
         --sh-md: 0 8px 24px rgba(0,0,0,.5);
@@ -97,7 +100,7 @@
 
     body {
         font-family: var(--font-body);
-        font-size: 17px;
+        font-size: 16px;
         font-weight: 400;
         line-height: 1.55;
         color: var(--text);
@@ -106,9 +109,8 @@
             radial-gradient(ellipse 80% 50% at 50% 0%,  rgba(201,169,97,.05) 0%, transparent 60%),
             radial-gradient(ellipse 60% 40% at 0% 100%, rgba(90,133,104,.04) 0%, transparent 60%),
             radial-gradient(ellipse 60% 40% at 100% 100%, rgba(136,102,168,.04) 0%, transparent 60%);
-        background-attachment: fixed;
         min-height: 100vh;
-        padding-bottom: 96px;
+        padding-bottom: calc(var(--nav-height) + env(safe-area-inset-bottom, 0px) + var(--sp-5));
         font-feature-settings: 'ss01', 'cv01';
     }
 
@@ -424,9 +426,9 @@
     }
     .pb-item { text-align: center; }
     .pb-label {
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 700;
-        letter-spacing: 0.12em;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
         color: var(--text-muted);
         margin-bottom: 3px;
@@ -465,9 +467,9 @@
         text-align: center;
     }
     .stat-label {
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 700;
-        letter-spacing: 0.12em;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
         color: var(--text-muted);
         margin-bottom: var(--sp-1);
@@ -899,9 +901,9 @@
     .rules-table th {
         text-align: left;
         padding: var(--sp-2) var(--sp-2);
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 700;
-        letter-spacing: 0.12em;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
         color: var(--text-muted);
         border-bottom: 1px solid var(--border-subtle);
@@ -939,6 +941,7 @@
     .bottom-nav {
         position: fixed;
         bottom: 0; left: 0; right: 0;
+        min-height: var(--nav-height);
         background: rgba(15,14,12,.96);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
@@ -959,11 +962,11 @@
         align-items: center;
         gap: 2px;
         font-family: var(--font-body);
-        font-size: 10px;
+        font-size: 11px;
         font-weight: 700;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.06em;
         text-transform: uppercase;
-        color: var(--text-faint);
+        color: var(--text-muted);
         min-height: 48px;
         transition: color .15s ease;
         position: relative;
@@ -1887,6 +1890,8 @@ function renderRules() {
 /* =========================================================
    13. NAVEGAÇÃO
    ========================================================= */
+const _rendered = new Set(['ranking']); // ranking já é renderizado no init
+
 function switchTab(name) {
     $$('.tab-content').forEach(t => t.classList.remove('is-active'));
     $$('.nav-btn').forEach(b => {
@@ -1895,6 +1900,18 @@ function switchTab(name) {
         b.setAttribute('aria-selected', active);
     });
     $('#tab-' + name).classList.add('is-active');
+
+    // lazy render: só renderiza a aba na primeira visita
+    if (!_rendered.has(name) && window._appData) {
+        const { data, BATTLES, lastRound } = window._appData;
+        if (name === 'aliancas')     renderAliancas(data);
+        if (name === 'medieval')     renderMedieval(data, lastRound);
+        if (name === 'battles')      renderBattles(BATTLES, data);
+        if (name === 'achievements') renderAchievements(data, lastRound);
+        if (name === 'rules')        renderRules();
+        _rendered.add(name);
+    }
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -1913,17 +1930,17 @@ async function init() {
         const BATTLES = buildBattles(rows);
         if (!BATTLES.length) throw new Error('Nenhuma rodada encontrada em dados.csv.');
         const lastRound = Math.max(...BATTLES.map(b => b.week));
+        const data = processAll(BATTLES);
+
+        // guarda dados para lazy rendering das outras abas
+        window._appData = { data, BATTLES, lastRound };
 
         $('#current-round').textContent = lastRound;
         $('#last-updated').textContent = 'Atualizado em ' + new Date().toLocaleDateString('pt-BR');
 
-        const data = processAll(BATTLES);
+        // renderiza só a aba inicial; o resto é lazy (ver switchTab)
         renderRanking(data, lastRound);
-        renderAliancas(data);
-        renderMedieval(data, lastRound);
-        renderBattles(BATTLES, data);
-        renderAchievements(data, lastRound);
-        renderRules();
+        renderRules(); // leve, sem dados externos — renderizar logo
 
         // listeners de navegação
         $$('.nav-btn').forEach(btn => {
