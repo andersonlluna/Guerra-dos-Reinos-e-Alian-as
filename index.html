@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#0F0E0C">
-    <title>Guerra dos Reinos · Bolão Cartola 2026</title>
+    <meta name="theme-color" content="#050304">
+    <title>Guerra dos Reinos · MMXXVI</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 
     <style>
     /* =========================================================
-       1.  RESET + DESIGN TOKENS
+       0.  RESET + DESIGN TOKENS — ÉPICO HBO
        ========================================================= */
     *, *::before, *::after {
         margin: 0; padding: 0; box-sizing: border-box;
@@ -21,104 +21,135 @@
     }
 
     :root {
-        /* Tipografia */
-        --font-display: 'Fraunces', 'Times New Roman', serif;
-        --font-body: 'Manrope', system-ui, sans-serif;
-        --font-tabular: 'Fraunces', 'Times New Roman', serif;
+        /* Fontes */
+        --f-display: 'Cinzel Decorative', 'Cinzel', serif;
+        --f-title: 'Cinzel', 'Trajan Pro', serif;
+        --f-body: 'Cormorant Garamond', Georgia, serif;
 
-        /* Paleta — Old World Premium (preto-marrom + ouro envelhecido) */
-        --bg: #0F0E0C;
-        --bg-elev: #1A1815;
-        --surface: #221E18;
-        --surface-2: #2B2620;
-        --surface-3: #34302A;
-        --border: #3A332A;
-        --border-strong: #4D4438;
-        --border-subtle: #2A2520;
+        /* PALETA — Sangue, Ouro e Carvão */
+        --bg: #050304;
+        --bg-elev: #0E0608;
+        --surface: #160B0E;
+        --surface-2: #1F0F13;
+        --surface-3: #2A151A;
+        --border: #3D1F25;
+        --border-strong: #5C2A33;
+        --border-subtle: #1F0F13;
+        --border-gold: #8B6A1E;
 
-        /* Acento principal */
-        --gold: #C9A961;
-        --gold-bright: #E8C982;
-        --gold-dim: #8C7340;
-        --gold-deep: #5C4A20;
+        /* Sangue */
+        --blood-deep: #4A0808;
+        --blood: #7A1818;
+        --blood-bright: #B83333;
+        --blood-fire: #E04848;
+
+        /* Ouro VIVO */
+        --gold-deep: #6B5018;
+        --gold-dim: #8B6A1E;
+        --gold: #D4A547;
+        --gold-bright: #F4C868;
+        --gold-fire: #FFD980;
+        --gold-pale: #F8E5BC;
 
         /* Texto */
-        --text: #E8E2D5;
-        --text-bright: #FAF6EC;
-        --text-soft: #B8B0A0;
-        --text-muted: #8C8478;
-        --text-faint: #5C564C;
+        --text: #E8DCC8;
+        --text-bright: #FFF5DD;
+        --text-soft: #B8A890;
+        --text-muted: #7A6E5C;
+        --text-faint: #4A4238;
 
-        /* Semânticos */
-        --success: #6B8E6F;
-        --success-bright: #9DBA9F;
-        --danger: #A04848;
-        --danger-bright: #C77878;
-        --info: #6B7F9E;
-
-        /* Alianças */
+        /* Alianças (mais saturadas) */
         --bastardos: #8B95A1;
-        --bastardos-bright: #C5CDD7;
-        --bastardos-deep: #4A535D;
-        --anel: #5A8568;
-        --anel-bright: #88B095;
-        --anel-deep: #2E4A36;
-        --northclaw: #8866A8;
-        --northclaw-bright: #B59CC9;
-        --northclaw-deep: #4A3360;
+        --bastardos-bright: #D4DCE5;
+        --bastardos-deep: #2A3038;
+        --anel: #4A8060;
+        --anel-bright: #88C09A;
+        --anel-deep: #1A2E22;
+        --northclaw: #8B5DBA;
+        --northclaw-bright: #C4A0E8;
+        --northclaw-deep: #2D1840;
 
-        /* Espaçamento (escala 4px) */
-        --sp-1: 4px;
-        --sp-2: 8px;
-        --sp-3: 12px;
-        --sp-4: 16px;
-        --sp-5: 20px;
-        --sp-6: 24px;
-        --sp-7: 32px;
-        --sp-8: 40px;
-        --sp-9: 56px;
+        /* Espaçamento */
+        --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px;
+        --sp-5: 20px; --sp-6: 24px; --sp-7: 32px; --sp-8: 40px; --sp-9: 56px;
 
-        /* Raio */
-        --r-sm: 4px;
-        --r-md: 6px;
-        --r-lg: 10px;
+        /* Raio (cantos angulares — épico não é arredondado) */
+        --r-sm: 2px; --r-md: 3px; --r-lg: 4px;
 
-        /* Alturas fixas */
-        --nav-height: 64px;
-
-        /* Sombras */
-        --sh-sm: 0 2px 8px rgba(0,0,0,.4);
-        --sh-md: 0 8px 24px rgba(0,0,0,.5);
-        --sh-lg: 0 20px 60px rgba(0,0,0,.7);
-        --sh-inset: inset 0 1px 0 rgba(255,255,255,.04);
+        /* Sombras dramáticas */
+        --sh-md: 0 8px 32px rgba(0,0,0,.7);
+        --sh-lg: 0 24px 64px rgba(0,0,0,.85);
+        --glow-gold: 0 0 24px rgba(244,200,104,.35), 0 0 48px rgba(212,165,71,.15);
+        --glow-blood: 0 0 24px rgba(184,51,51,.4), 0 0 48px rgba(122,24,24,.2);
     }
 
     /* =========================================================
-       2.  BASE
+       1.  BASE + ATMOSFERA
        ========================================================= */
     html { -webkit-text-size-adjust: 100%; }
 
     body {
-        font-family: var(--font-body);
-        font-size: 16px;
+        font-family: var(--f-body);
+        font-size: 18px;
         font-weight: 400;
         line-height: 1.55;
         color: var(--text);
         background: var(--bg);
+
+        /* Atmosfera cinematográfica: vermelho-sangue nas bordas + grão sutil */
         background-image:
-            radial-gradient(ellipse 80% 50% at 50% 0%,  rgba(201,169,97,.05) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 40% at 0% 100%, rgba(90,133,104,.04) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 40% at 100% 100%, rgba(136,102,168,.04) 0%, transparent 60%);
+            radial-gradient(ellipse 100% 60% at 50% 0%,    rgba(122,24,24,.18) 0%, transparent 60%),
+            radial-gradient(ellipse 80% 50% at 0% 100%,    rgba(122,24,24,.12) 0%, transparent 60%),
+            radial-gradient(ellipse 80% 50% at 100% 100%,  rgba(212,165,71,.08) 0%, transparent 55%),
+            radial-gradient(ellipse 60% 80% at 50% 50%,    transparent 30%, rgba(0,0,0,.5) 100%);
+        background-attachment: fixed;
         min-height: 100vh;
-        padding-bottom: calc(var(--nav-height) + env(safe-area-inset-bottom, 0px) + var(--sp-5));
-        font-feature-settings: 'ss01', 'cv01';
+        padding-bottom: 100px;
+        position: relative;
     }
 
-    /* Numerais tabulares por padrão em qualquer span/div com classe .num */
-    .num, .lord-rank, .total-points, .alliance-total, .stat-value,
-    .member-pts-main, .result-pts {
+    /* Grão de filme — textura sutil sobre tudo */
+    body::before {
+        content: '';
+        position: fixed; inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        opacity: .35;
+        mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    }
+
+    body > * { position: relative; z-index: 2; }
+
+    /* Numerais tabulares onde importa */
+    .num, .total-points, .alliance-total, .stat-value,
+    .member-pts-main, .result-pts, .pb-value {
         font-variant-numeric: tabular-nums;
         letter-spacing: -0.01em;
+    }
+
+    /* =========================================================
+       2.  ORNAMENTOS HERÁLDICOS (separadores)
+       ========================================================= */
+    .ornament {
+        display: flex; align-items: center; justify-content: center;
+        gap: var(--sp-3);
+        color: var(--gold-dim);
+        font-size: 14px;
+        margin: var(--sp-3) 0;
+    }
+    .ornament::before, .ornament::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        max-width: 80px;
+        background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    }
+    .ornament-mark {
+        font-family: var(--f-title);
+        font-size: 11px;
+        letter-spacing: 0.4em;
+        color: var(--gold);
     }
 
     /* =========================================================
@@ -126,115 +157,157 @@
        ========================================================= */
     .screen-overlay {
         position: fixed; inset: 0;
+        background: var(--bg);
+        background-image:
+            radial-gradient(ellipse 80% 60% at 50% 50%, rgba(122,24,24,.2) 0%, transparent 70%),
+            radial-gradient(ellipse 60% 80% at 50% 50%, transparent 30%, rgba(0,0,0,.7) 100%);
         display: flex; flex-direction: column;
         align-items: center; justify-content: center;
-        gap: var(--sp-5);
-        background: var(--bg);
+        gap: var(--sp-6);
         z-index: 999;
         padding: var(--sp-6);
         text-align: center;
     }
-
     #error-screen { display: none; }
 
     .loading-mark {
-        width: 64px; height: 64px;
-        border: 1px solid var(--gold-dim);
+        width: 72px; height: 72px;
+        border: 2px solid transparent;
         border-top-color: var(--gold-bright);
+        border-right-color: var(--gold-dim);
         border-radius: 50%;
         animation: spin 1.4s linear infinite;
+        box-shadow: var(--glow-gold);
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
     .loading-text, .error-title {
-        font-family: var(--font-display);
+        font-family: var(--f-title);
         font-weight: 700;
-        font-size: 20px;
-        color: var(--gold);
-        letter-spacing: 0.02em;
+        font-size: 18px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold-bright);
+        text-shadow: 0 0 16px rgba(244,200,104,.4);
     }
-    .error-title { color: var(--danger-bright); }
+    .error-title { color: var(--blood-fire); text-shadow: 0 0 16px rgba(224,72,72,.4); }
     .error-msg {
         color: var(--text-muted);
-        max-width: 340px;
-        font-size: 15px;
-        line-height: 1.5;
+        max-width: 360px;
+        font-size: 16px;
+        font-style: italic;
+        line-height: 1.6;
     }
     .error-mark {
-        width: 56px; height: 56px;
-        border-radius: 50%;
-        border: 1px solid var(--danger);
+        width: 64px; height: 64px;
+        border: 2px solid var(--blood-fire);
         display: grid; place-items: center;
-        font-family: var(--font-display);
-        font-size: 24px;
-        color: var(--danger-bright);
+        font-family: var(--f-title);
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--blood-fire);
+        transform: rotate(45deg);
+        box-shadow: var(--glow-blood);
     }
+    .error-mark > span { transform: rotate(-45deg); }
 
     /* =========================================================
-       4.  HEADER
+       4.  HEADER — ÉPICO E DRAMÁTICO
        ========================================================= */
     .header {
         position: sticky; top: 0; z-index: 100;
-        background: linear-gradient(180deg, rgba(15,14,12,.97) 0%, rgba(15,14,12,.92) 100%);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--border);
-        padding: var(--sp-5) var(--sp-4) var(--sp-4);
+        background:
+            linear-gradient(180deg, rgba(5,3,4,.97) 0%, rgba(22,11,14,.92) 100%);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--gold-deep);
+        padding: var(--sp-5) var(--sp-4) var(--sp-5);
+        position: sticky;
+        box-shadow: 0 4px 32px rgba(0,0,0,.6), inset 0 -1px 0 rgba(212,165,71,.15);
     }
+    .header::after {
+        content: '';
+        position: absolute;
+        bottom: -3px; left: 0; right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent 0%, var(--gold-dim) 25%, var(--gold) 50%, var(--gold-dim) 75%, transparent 100%);
+    }
+
     .header-inner {
         max-width: 640px;
         margin: 0 auto;
         text-align: center;
     }
     .header-eyebrow {
-        font-family: var(--font-body);
+        font-family: var(--f-title);
         font-size: 11px;
         font-weight: 700;
-        letter-spacing: 0.22em;
+        letter-spacing: 0.4em;
         text-transform: uppercase;
-        color: var(--gold-dim);
-        margin-bottom: var(--sp-2);
+        color: var(--gold);
+        margin-bottom: var(--sp-3);
+        text-shadow: 0 0 12px rgba(212,165,71,.3);
     }
     .header-title {
-        font-family: var(--font-display);
-        font-weight: 800;
-        font-size: clamp(26px, 6.5vw, 32px);
-        line-height: 1;
-        color: var(--text-bright);
-        letter-spacing: -0.02em;
-        font-variation-settings: 'opsz' 144, 'SOFT' 30;
+        font-family: var(--f-display);
+        font-weight: 900;
+        font-size: clamp(34px, 9vw, 48px);
+        line-height: 0.95;
+        letter-spacing: 0.02em;
+        color: var(--gold-bright);
+        text-transform: uppercase;
+        text-shadow:
+            0 1px 0 #000,
+            0 2px 4px rgba(0,0,0,.8),
+            0 0 24px rgba(244,200,104,.35),
+            0 0 48px rgba(212,165,71,.2);
+        background: linear-gradient(180deg, var(--gold-fire) 0%, var(--gold) 50%, var(--gold-deep) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 2px 8px rgba(0,0,0,.6));
     }
     .header-title em {
         font-style: italic;
-        font-weight: 400;
-        color: var(--gold-bright);
-        font-variation-settings: 'opsz' 144, 'SOFT' 80;
+        font-family: var(--f-body);
+        font-weight: 500;
+        color: var(--blood-bright);
+        background: linear-gradient(180deg, var(--blood-fire), var(--blood));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: lowercase;
+        font-size: 0.7em;
+        letter-spacing: -0.02em;
+        margin: 0 0.1em;
     }
     .header-meta {
-        margin-top: var(--sp-3);
+        margin-top: var(--sp-4);
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: var(--sp-3);
-        font-size: 13px;
+        gap: var(--sp-2);
+        font-family: var(--f-title);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
         color: var(--text-muted);
     }
-    .header-meta .dot {
-        width: 3px; height: 3px;
-        background: var(--text-faint);
-        border-radius: 50%;
-    }
+    .header-meta .sep { color: var(--gold-dim); }
     .round-pill {
-        font-family: var(--font-display);
-        font-weight: 700;
-        color: var(--gold-bright);
-        background: rgba(201,169,97,.08);
-        border: 1px solid rgba(201,169,97,.3);
-        border-radius: 99px;
-        padding: 2px 10px;
+        font-family: var(--f-title);
+        font-weight: 800;
         font-size: 13px;
+        letter-spacing: 0.15em;
+        color: var(--gold-fire);
+        background: linear-gradient(180deg, rgba(122,24,24,.4), rgba(74,8,8,.6));
+        border: 1px solid var(--gold-dim);
+        padding: 4px 12px;
+        text-shadow: 0 0 12px rgba(244,200,104,.5);
+        box-shadow: inset 0 1px 0 rgba(244,200,104,.15), 0 2px 8px rgba(0,0,0,.4);
     }
-    .round-pill .of { color: var(--text-muted); font-weight: 400; }
+    .round-pill .of { color: var(--text-muted); font-weight: 500; margin-left: 4px; }
 
     /* =========================================================
        5.  CONTENT WRAPPER
@@ -242,83 +315,124 @@
     .content {
         max-width: 640px;
         margin: 0 auto;
-        padding: var(--sp-6) var(--sp-4) var(--sp-7);
+        padding: var(--sp-7) var(--sp-4) var(--sp-7);
     }
 
     .section-head {
         margin-bottom: var(--sp-6);
-        padding-bottom: var(--sp-4);
-        border-bottom: 1px solid var(--border);
+        text-align: center;
     }
     .section-eyebrow {
+        font-family: var(--f-title);
         font-size: 11px;
         font-weight: 700;
-        letter-spacing: 0.22em;
+        letter-spacing: 0.4em;
         text-transform: uppercase;
-        color: var(--gold-dim);
+        color: var(--gold);
         margin-bottom: var(--sp-2);
+        text-shadow: 0 0 12px rgba(212,165,71,.3);
     }
     .section-title {
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 28px;
-        line-height: 1.1;
+        font-family: var(--f-display);
+        font-weight: 900;
+        font-size: clamp(28px, 7vw, 36px);
+        line-height: 1.05;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
         color: var(--text-bright);
-        letter-spacing: -0.02em;
-        font-variation-settings: 'opsz' 144, 'SOFT' 50;
+        background: linear-gradient(180deg, var(--gold-pale) 0%, var(--gold-bright) 60%, var(--gold) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: var(--sp-3);
+        filter: drop-shadow(0 2px 6px rgba(0,0,0,.5));
+    }
+    .section-decorative {
+        display: flex; align-items: center; justify-content: center;
+        gap: var(--sp-2);
+        color: var(--gold-dim);
+        margin-bottom: var(--sp-7);
+    }
+    .section-decorative::before,
+    .section-decorative::after {
+        content: '';
+        flex: 0 1 100px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    }
+    .section-decorative-mark {
+        font-family: var(--f-title);
+        font-size: 12px;
+        letter-spacing: 0.3em;
+        color: var(--gold);
     }
 
     /* =========================================================
-       6.  NOTICE / BANNERS
+       6.  NOTICE
        ========================================================= */
     .notice {
-        background: linear-gradient(180deg, rgba(201,169,97,.06), rgba(201,169,97,.02));
-        border: 1px solid rgba(201,169,97,.18);
-        border-radius: var(--r-md);
-        padding: var(--sp-4);
-        margin-bottom: var(--sp-5);
-        font-size: 14px;
+        background: linear-gradient(135deg, rgba(122,24,24,.18), rgba(74,8,8,.08));
+        border: 1px solid rgba(184,51,51,.35);
+        border-left: 3px solid var(--blood-fire);
+        padding: var(--sp-4) var(--sp-5);
+        margin-bottom: var(--sp-6);
+        font-family: var(--f-body);
+        font-size: 16px;
+        font-style: italic;
         line-height: 1.55;
         color: var(--text-soft);
-        display: flex;
-        gap: var(--sp-3);
-        align-items: flex-start;
     }
-    .notice-mark {
-        flex-shrink: 0;
-        width: 28px; height: 28px;
-        border: 1px solid var(--gold-dim);
-        border-radius: 50%;
-        display: grid; place-items: center;
-        font-family: var(--font-display);
-        font-style: italic;
-        font-weight: 600;
-        color: var(--gold-bright);
-        font-size: 14px;
-    }
-    .notice strong { color: var(--gold-bright); font-weight: 700; }
+    .notice strong { color: var(--gold-bright); font-style: normal; font-weight: 700; }
 
     /* =========================================================
-       7.  LORD CARD (geral)
+       7.  LORD CARD — DRAMÁTICO
        ========================================================= */
     .lord-card {
-        background: var(--surface);
+        background:
+            linear-gradient(135deg, rgba(31,15,19,.95) 0%, rgba(22,11,14,.95) 100%);
         border: 1px solid var(--border);
-        border-radius: var(--r-lg);
+        border-radius: var(--r-md);
         padding: var(--sp-5);
-        margin-bottom: var(--sp-3);
+        margin-bottom: var(--sp-4);
         position: relative;
-        box-shadow: var(--sh-md), var(--sh-inset);
-        transition: border-color .2s ease;
+        box-shadow: var(--sh-md), inset 0 1px 0 rgba(244,200,104,.04);
+        transition: border-color .25s, box-shadow .25s, transform .15s;
+        overflow: hidden;
+    }
+    /* Linha superior dourada decorativa em todo card */
+    .lord-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
     }
     .lord-card.is-clickable { cursor: pointer; }
     .lord-card.is-clickable:hover,
-    .lord-card.is-clickable:focus-visible { border-color: var(--border-strong); }
+    .lord-card.is-clickable:focus-visible {
+        border-color: var(--gold-deep);
+        box-shadow: var(--sh-md), inset 0 1px 0 rgba(244,200,104,.08), 0 0 24px rgba(212,165,71,.1);
+    }
     .lord-card.is-clickable:focus-visible {
         outline: 2px solid var(--gold);
         outline-offset: 2px;
     }
-    .lord-card.is-1st { border-color: var(--gold-dim); box-shadow: var(--sh-md), 0 0 40px -10px rgba(201,169,97,.15); }
+    .lord-card.is-clickable:active { transform: scale(0.997); }
+
+    /* Card do líder — dourado dramático */
+    .lord-card.is-1st {
+        border-color: var(--gold-dim);
+        background:
+            linear-gradient(135deg, rgba(74,8,8,.4) 0%, rgba(31,15,19,.95) 60%);
+        box-shadow: var(--sh-md), 0 0 40px rgba(212,165,71,.18), inset 0 1px 0 rgba(244,200,104,.1);
+    }
+    .lord-card.is-1st::before {
+        height: 2px;
+        width: 100%;
+        background: linear-gradient(90deg, transparent 0%, var(--gold-dim) 20%, var(--gold-fire) 50%, var(--gold-dim) 80%, transparent 100%);
+    }
 
     .lord-row {
         display: grid;
@@ -327,41 +441,63 @@
         align-items: center;
     }
 
-    /* Posição como tipografia, não medalha */
+    /* Posição em ROMANO gigante */
     .lord-rank {
-        font-family: var(--font-display);
-        font-weight: 800;
-        font-size: 36px;
-        line-height: 1;
+        font-family: var(--f-display);
+        font-weight: 900;
+        font-size: 56px;
+        line-height: 0.85;
         color: var(--text-faint);
-        letter-spacing: -0.04em;
-        min-width: 44px;
+        letter-spacing: -0.02em;
+        min-width: 60px;
         text-align: center;
-        font-variation-settings: 'opsz' 144;
+        text-shadow: 0 2px 8px rgba(0,0,0,.6);
     }
-    .is-1st .lord-rank { color: var(--gold-bright); }
-    .is-2nd .lord-rank { color: var(--bastardos-bright); }
-    .is-3rd .lord-rank { color: #C49070; }
+    .is-1st .lord-rank {
+        background: linear-gradient(180deg, var(--gold-fire) 0%, var(--gold) 60%, var(--gold-deep) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 12px rgba(244,200,104,.45)) drop-shadow(0 2px 4px rgba(0,0,0,.6));
+    }
+    .is-2nd .lord-rank {
+        background: linear-gradient(180deg, #E8E8E8 0%, #A8A8A8 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,.6));
+    }
+    .is-3rd .lord-rank {
+        background: linear-gradient(180deg, #D4824A 0%, #8B4E22 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,.6));
+    }
+    .is-last .lord-rank {
+        color: var(--blood-bright);
+        text-shadow: 0 0 16px rgba(184,51,51,.4), 0 2px 4px rgba(0,0,0,.6);
+    }
 
     .lord-id { min-width: 0; }
     .lord-name {
-        font-family: var(--font-display);
-        font-weight: 700;
+        font-family: var(--f-title);
+        font-weight: 800;
         font-size: 19px;
         line-height: 1.15;
         color: var(--text-bright);
-        letter-spacing: -0.01em;
-        margin-bottom: 2px;
-        font-variation-settings: 'opsz' 36;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        margin-bottom: 3px;
+        text-shadow: 0 1px 2px rgba(0,0,0,.6);
     }
     .lord-house {
-        font-family: var(--font-display);
+        font-family: var(--f-body);
         font-style: italic;
-        font-weight: 400;
-        font-size: 14px;
-        color: var(--text-soft);
+        font-weight: 500;
+        font-size: 16px;
+        color: var(--gold);
         margin-bottom: var(--sp-2);
-        font-variation-settings: 'opsz' 14, 'SOFT' 100;
     }
     .lord-tags {
         display: flex;
@@ -373,26 +509,27 @@
     .alliance-tag {
         display: inline-flex;
         align-items: center;
-        gap: 4px;
-        font-size: 11px;
+        gap: 5px;
+        font-family: var(--f-title);
+        font-size: 10px;
         font-weight: 700;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
-        padding: 3px 8px;
-        border-radius: 3px;
+        padding: 4px 9px;
+        border-radius: var(--r-sm);
         border: 1px solid;
     }
-    .tag-bastardos  { color: var(--bastardos-bright); border-color: rgba(139,149,161,.4); background: rgba(139,149,161,.07); }
-    .tag-anel       { color: var(--anel-bright); border-color: rgba(90,133,104,.4); background: rgba(90,133,104,.07); }
-    .tag-northclaw  { color: var(--northclaw-bright); border-color: rgba(136,102,168,.4); background: rgba(136,102,168,.07); }
+    .tag-bastardos  { color: var(--bastardos-bright); border-color: var(--bastardos); background: linear-gradient(135deg, rgba(139,149,161,.18), rgba(42,48,56,.4)); }
+    .tag-anel       { color: var(--anel-bright); border-color: var(--anel); background: linear-gradient(135deg, rgba(74,128,96,.22), rgba(26,46,34,.4)); }
+    .tag-northclaw  { color: var(--northclaw-bright); border-color: var(--northclaw); background: linear-gradient(135deg, rgba(139,93,186,.22), rgba(45,24,64,.4)); }
 
     .title-tag {
-        font-family: var(--font-display);
+        font-family: var(--f-body);
         font-style: italic;
-        font-weight: 400;
-        font-size: 13px;
-        color: var(--gold);
-        font-variation-settings: 'opsz' 14;
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--gold-bright);
+        text-shadow: 0 0 8px rgba(244,200,104,.25);
     }
 
     .lord-points {
@@ -400,59 +537,80 @@
         min-width: 0;
     }
     .total-points {
-        font-family: var(--font-display);
-        font-weight: 800;
-        font-size: 32px;
-        line-height: 1;
-        color: var(--text-bright);
+        font-family: var(--f-display);
+        font-weight: 900;
+        font-size: 38px;
+        line-height: 0.95;
         letter-spacing: -0.03em;
-        font-variation-settings: 'opsz' 144;
+        background: linear-gradient(180deg, var(--gold-fire) 0%, var(--gold) 60%, var(--gold-deep) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 8px rgba(244,200,104,.3)) drop-shadow(0 2px 4px rgba(0,0,0,.6));
     }
     .points-meta {
         margin-top: 4px;
-        font-size: 11px;
-        color: var(--text-muted);
-        letter-spacing: 0.06em;
+        font-family: var(--f-title);
+        font-size: 10px;
+        color: var(--gold-dim);
+        letter-spacing: 0.25em;
         text-transform: uppercase;
-        font-weight: 600;
+        font-weight: 700;
     }
+
     .points-breakdown {
-        margin-top: var(--sp-3);
-        padding-top: var(--sp-3);
-        border-top: 1px solid var(--border-subtle);
+        margin-top: var(--sp-4);
+        padding-top: var(--sp-4);
+        border-top: 1px solid var(--border);
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: var(--sp-2);
+        position: relative;
+    }
+    .points-breakdown::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 50%;
+        transform: translateX(-50%);
+        width: 30%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
     }
     .pb-item { text-align: center; }
     .pb-label {
-        font-size: 12px;
+        font-family: var(--f-title);
+        font-size: 9px;
         font-weight: 700;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.25em;
         text-transform: uppercase;
-        color: var(--text-muted);
-        margin-bottom: 3px;
+        color: var(--gold-dim);
+        margin-bottom: var(--sp-1);
     }
     .pb-value {
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 16px;
-        font-variant-numeric: tabular-nums;
+        font-family: var(--f-title);
+        font-weight: 800;
+        font-size: 18px;
         color: var(--text-bright);
     }
-    .pb-value.pos { color: var(--success-bright); }
-    .pb-value.neg { color: var(--danger-bright); }
-    .pb-value.muted { color: var(--text-muted); font-size: 13px; font-style: italic; }
-    .pb-value.gold { color: var(--gold-bright); }
+    .pb-value.pos { color: var(--anel-bright); text-shadow: 0 0 8px rgba(136,192,154,.25); }
+    .pb-value.neg { color: var(--blood-fire); text-shadow: 0 0 8px rgba(224,72,72,.3); }
+    .pb-value.muted { color: var(--text-faint); font-size: 13px; font-style: italic; font-family: var(--f-body); }
+    .pb-value.gold {
+        background: linear-gradient(180deg, var(--gold-fire), var(--gold));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
-    /* Stats expandidos */
+    /* Detalhes expandidos */
     .lord-details {
         display: none;
         margin-top: var(--sp-4);
         padding-top: var(--sp-4);
-        border-top: 1px solid var(--border-subtle);
+        border-top: 1px solid var(--border);
     }
-    .lord-details.is-open { display: block; }
+    .lord-details.is-open { display: block; animation: reveal .3s ease; }
+    @keyframes reveal { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
 
     .stats-grid {
         display: grid;
@@ -460,100 +618,132 @@
         gap: var(--sp-2);
     }
     .stat-cell {
-        background: rgba(255,255,255,.02);
+        background: linear-gradient(180deg, rgba(0,0,0,.3), rgba(0,0,0,.1));
         border: 1px solid var(--border-subtle);
         border-radius: var(--r-sm);
         padding: var(--sp-3) var(--sp-2);
         text-align: center;
     }
+    .stat-cell.has-value { border-color: var(--gold-deep); background: linear-gradient(180deg, rgba(122,24,24,.1), rgba(0,0,0,.3)); }
+    .stat-cell.has-neg { border-color: rgba(184,51,51,.4); background: linear-gradient(180deg, rgba(184,51,51,.08), rgba(0,0,0,.3)); }
     .stat-label {
-        font-size: 12px;
+        font-family: var(--f-title);
+        font-size: 9px;
         font-weight: 700;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
-        color: var(--text-muted);
+        color: var(--gold-dim);
         margin-bottom: var(--sp-1);
     }
     .stat-value {
-        font-family: var(--font-display);
+        font-family: var(--f-display);
         font-weight: 700;
-        font-size: 22px;
+        font-size: 24px;
         line-height: 1;
         color: var(--text-bright);
     }
-    .stat-value.has-value { color: var(--gold-bright); }
-    .stat-value.is-negative { color: var(--danger-bright); }
+    .stat-value.is-active {
+        background: linear-gradient(180deg, var(--gold-fire), var(--gold));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .stat-value.is-negative { color: var(--blood-fire); text-shadow: 0 0 12px rgba(224,72,72,.3); }
     .stat-sub {
-        font-family: var(--font-display);
+        font-family: var(--f-body);
         font-style: italic;
-        font-size: 11px;
+        font-size: 12px;
         color: var(--gold);
         margin-top: 4px;
         line-height: 1.2;
     }
 
     .toggle-hint {
-        margin-top: var(--sp-3);
+        margin-top: var(--sp-4);
         padding-top: var(--sp-3);
         border-top: 1px solid var(--border-subtle);
-        font-size: 12px;
-        color: var(--text-muted);
+        font-family: var(--f-title);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gold-dim);
         text-align: center;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
     }
 
     /* =========================================================
-       8.  ALIANÇAS
+       8.  ALIANÇAS — BANDEIRAS DE GUERRA
        ========================================================= */
     .scoreboard {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: var(--r-lg);
-        padding: var(--sp-5);
+        background: linear-gradient(180deg, rgba(74,8,8,.2), rgba(22,11,14,.95));
+        border: 1px solid var(--gold-deep);
+        border-radius: var(--r-md);
+        padding: var(--sp-6) var(--sp-5);
         margin-bottom: var(--sp-7);
-        box-shadow: var(--sh-md);
+        box-shadow: var(--sh-md), inset 0 1px 0 rgba(244,200,104,.08);
+        position: relative;
+    }
+    .scoreboard::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent 0%, var(--gold-dim) 20%, var(--gold-fire) 50%, var(--gold-dim) 80%, transparent 100%);
     }
     .scoreboard-title {
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 0.22em;
+        font-family: var(--f-display);
+        font-weight: 900;
+        font-size: 18px;
+        letter-spacing: 0.25em;
         text-transform: uppercase;
-        color: var(--gold-dim);
         text-align: center;
-        margin-bottom: var(--sp-4);
+        color: var(--gold-fire);
+        text-shadow: 0 0 16px rgba(244,200,104,.3);
+        margin-bottom: var(--sp-5);
     }
+
     .alliance-rank-row {
         display: grid;
         grid-template-columns: auto auto 1fr auto;
         gap: var(--sp-3);
         align-items: center;
-        padding: var(--sp-3) 0;
+        padding: var(--sp-4) 0;
         border-bottom: 1px solid var(--border-subtle);
     }
     .alliance-rank-row:last-child { border-bottom: 0; }
     .alliance-rank {
-        font-family: var(--font-display);
-        font-weight: 800;
-        font-size: 24px;
+        font-family: var(--f-display);
+        font-weight: 900;
+        font-size: 32px;
         color: var(--text-faint);
-        min-width: 24px;
+        min-width: 32px;
         line-height: 1;
+        text-align: center;
     }
-    .alliance-rank.is-1 { color: var(--gold-bright); }
-    .alliance-rank.is-2 { color: var(--bastardos-bright); }
+    .alliance-rank.is-1 {
+        background: linear-gradient(180deg, var(--gold-fire), var(--gold-deep));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 8px rgba(244,200,104,.35));
+    }
+    .alliance-rank.is-2 { color: #BFBFBF; }
     .alliance-rank.is-3 { color: #C49070; }
-    .alliance-emoji { font-size: 22px; line-height: 1; opacity: 0.85; }
+    .alliance-emoji { font-size: 26px; line-height: 1; }
     .alliance-rank-name {
-        font-family: var(--font-display);
-        font-weight: 700;
+        font-family: var(--f-title);
+        font-weight: 800;
         font-size: 17px;
-        color: var(--text-bright);
-        letter-spacing: -0.01em;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
     }
+    .alliance-rank-row.bastardos .alliance-rank-name { color: var(--bastardos-bright); }
+    .alliance-rank-row.anel      .alliance-rank-name { color: var(--anel-bright); }
+    .alliance-rank-row.northclaw .alliance-rank-name { color: var(--northclaw-bright); }
     .alliance-rank-sub {
-        font-family: var(--font-display);
+        font-family: var(--f-body);
         font-style: italic;
-        font-size: 12px;
+        font-size: 13px;
         color: var(--text-muted);
         margin-top: 2px;
     }
@@ -561,89 +751,106 @@
         text-align: right;
     }
     .alliance-rank-total {
-        font-family: var(--font-display);
-        font-weight: 800;
-        font-size: 24px;
-        font-variant-numeric: tabular-nums;
+        font-family: var(--f-display);
+        font-weight: 900;
+        font-size: 28px;
         line-height: 1;
         letter-spacing: -0.02em;
     }
-    .alliance-rank-row.bastardos .alliance-rank-total { color: var(--bastardos-bright); }
-    .alliance-rank-row.anel      .alliance-rank-total { color: var(--anel-bright); }
-    .alliance-rank-row.northclaw .alliance-rank-total { color: var(--northclaw-bright); }
+    .alliance-rank-row.bastardos .alliance-rank-total { color: var(--bastardos-bright); text-shadow: 0 0 12px rgba(212,220,229,.2); }
+    .alliance-rank-row.anel      .alliance-rank-total { color: var(--anel-bright); text-shadow: 0 0 12px rgba(136,192,154,.25); }
+    .alliance-rank-row.northclaw .alliance-rank-total { color: var(--northclaw-bright); text-shadow: 0 0 12px rgba(196,160,232,.25); }
     .alliance-rank-avg {
-        font-size: 11px;
-        color: var(--text-muted);
-        margin-top: 2px;
-        letter-spacing: 0.04em;
+        font-family: var(--f-title);
+        font-size: 10px;
+        color: var(--gold-dim);
+        margin-top: 4px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        font-weight: 700;
     }
 
-    /* Bloco da aliança */
+    /* Bloco da aliança (banner de guerra) */
     .alliance-block { margin-bottom: var(--sp-7); }
     .alliance-banner {
         display: grid;
         grid-template-columns: auto 1fr auto;
         gap: var(--sp-4);
         align-items: center;
-        padding: var(--sp-5);
-        border-radius: var(--r-lg);
+        padding: var(--sp-5) var(--sp-5);
         margin-bottom: var(--sp-3);
         border: 1px solid;
+        border-radius: var(--r-md);
+        position: relative;
+        overflow: hidden;
+        box-shadow: var(--sh-md);
+    }
+    .alliance-banner::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
     }
     .alliance-banner.bastardos {
-        background: linear-gradient(135deg, rgba(139,149,161,.12), rgba(139,149,161,.02));
-        border-color: rgba(139,149,161,.35);
+        background: linear-gradient(135deg, rgba(139,149,161,.2), rgba(42,48,56,.4) 70%, rgba(22,11,14,.9));
+        border-color: var(--bastardos);
+    }
+    .alliance-banner.bastardos::before {
+        background: linear-gradient(90deg, transparent, var(--bastardos-bright), transparent);
     }
     .alliance-banner.anel {
-        background: linear-gradient(135deg, rgba(90,133,104,.14), rgba(90,133,104,.02));
-        border-color: rgba(90,133,104,.4);
+        background: linear-gradient(135deg, rgba(74,128,96,.25), rgba(26,46,34,.4) 70%, rgba(22,11,14,.9));
+        border-color: var(--anel);
+    }
+    .alliance-banner.anel::before {
+        background: linear-gradient(90deg, transparent, var(--anel-bright), transparent);
     }
     .alliance-banner.northclaw {
-        background: linear-gradient(135deg, rgba(136,102,168,.14), rgba(136,102,168,.02));
-        border-color: rgba(136,102,168,.4);
+        background: linear-gradient(135deg, rgba(139,93,186,.25), rgba(45,24,64,.4) 70%, rgba(22,11,14,.9));
+        border-color: var(--northclaw);
     }
-    .alliance-banner-icon {
-        font-size: 32px;
-        line-height: 1;
+    .alliance-banner.northclaw::before {
+        background: linear-gradient(90deg, transparent, var(--northclaw-bright), transparent);
     }
+    .alliance-banner-icon { font-size: 36px; line-height: 1; filter: drop-shadow(0 2px 4px rgba(0,0,0,.6)); }
     .alliance-banner-name {
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 22px;
-        line-height: 1.1;
-        letter-spacing: -0.02em;
+        font-family: var(--f-display);
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 1.05;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        text-shadow: 0 2px 4px rgba(0,0,0,.6);
     }
     .alliance-banner.bastardos .alliance-banner-name { color: var(--bastardos-bright); }
     .alliance-banner.anel      .alliance-banner-name { color: var(--anel-bright); }
     .alliance-banner.northclaw .alliance-banner-name { color: var(--northclaw-bright); }
     .alliance-banner-sub {
-        font-family: var(--font-display);
+        font-family: var(--f-body);
         font-style: italic;
-        font-size: 13px;
-        color: var(--text-muted);
+        font-size: 14px;
+        color: var(--text-soft);
         margin-top: 4px;
     }
-    .alliance-banner-pts {
-        text-align: right;
-    }
+    .alliance-banner-pts { text-align: right; }
     .alliance-banner-total {
-        font-family: var(--font-display);
-        font-weight: 800;
-        font-size: 30px;
-        line-height: 1;
+        font-family: var(--f-display);
+        font-weight: 900;
+        font-size: 36px;
+        line-height: 0.95;
         letter-spacing: -0.03em;
-        font-variant-numeric: tabular-nums;
     }
-    .alliance-banner.bastardos .alliance-banner-total { color: var(--bastardos-bright); }
-    .alliance-banner.anel      .alliance-banner-total { color: var(--anel-bright); }
-    .alliance-banner.northclaw .alliance-banner-total { color: var(--northclaw-bright); }
+    .alliance-banner.bastardos .alliance-banner-total { color: var(--bastardos-bright); text-shadow: 0 0 16px rgba(212,220,229,.25); }
+    .alliance-banner.anel      .alliance-banner-total { color: var(--anel-bright); text-shadow: 0 0 16px rgba(136,192,154,.3); }
+    .alliance-banner.northclaw .alliance-banner-total { color: var(--northclaw-bright); text-shadow: 0 0 16px rgba(196,160,232,.3); }
     .alliance-banner-avg {
-        font-size: 11px;
-        color: var(--text-muted);
-        margin-top: var(--sp-1);
-        letter-spacing: 0.04em;
+        font-family: var(--f-title);
+        font-size: 10px;
+        color: var(--gold-dim);
+        margin-top: 4px;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
-        font-weight: 600;
+        font-weight: 700;
     }
 
     .member-row {
@@ -652,261 +859,395 @@
         gap: var(--sp-3);
         align-items: center;
         padding: var(--sp-3) var(--sp-4);
-        border-radius: var(--r-md);
+        border-radius: var(--r-sm);
         margin-bottom: var(--sp-2);
-        background: var(--surface);
-        border: 1px solid var(--border-subtle);
+        background: linear-gradient(180deg, rgba(31,15,19,.6), rgba(22,11,14,.6));
+        border: 1px solid var(--border);
+        box-shadow: var(--sh-md);
     }
-    .member-emoji { font-size: 22px; }
+    .member-emoji { font-size: 24px; }
     .member-name {
-        font-family: var(--font-display);
+        font-family: var(--f-title);
         font-weight: 700;
         font-size: 16px;
         color: var(--text-bright);
-        letter-spacing: -0.01em;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
     }
     .member-title {
-        font-family: var(--font-display);
+        font-family: var(--f-body);
         font-style: italic;
-        font-size: 12px;
+        font-size: 13px;
         color: var(--gold);
         margin-top: 2px;
     }
     .member-pts { text-align: right; }
     .member-pts-main {
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 19px;
-        color: var(--gold-bright);
+        font-family: var(--f-display);
+        font-weight: 800;
+        font-size: 22px;
         line-height: 1;
-        letter-spacing: -0.02em;
+        background: linear-gradient(180deg, var(--gold-fire), var(--gold));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     .member-pts-sub {
-        font-size: 11px;
+        font-family: var(--f-title);
+        font-size: 10px;
         margin-top: 4px;
         color: var(--text-muted);
-        letter-spacing: 0.04em;
+        letter-spacing: 0.1em;
+        font-weight: 600;
     }
-    .member-pts-sub .pos { color: var(--success-bright); }
-    .member-pts-sub .neg { color: var(--danger-bright); }
+    .member-pts-sub .pos { color: var(--anel-bright); }
+    .member-pts-sub .neg { color: var(--blood-fire); }
 
     /* =========================================================
-       9.  BATALHAS
+       9.  BATALHAS — CARTAS DE PERGAMINHO
        ========================================================= */
     .battle-card {
-        background: var(--surface);
+        background: linear-gradient(135deg, rgba(31,15,19,.95), rgba(22,11,14,.95));
         border: 1px solid var(--border);
         border-radius: var(--r-md);
         padding: var(--sp-5);
-        margin-bottom: var(--sp-3);
+        margin-bottom: var(--sp-4);
         cursor: pointer;
-        transition: border-color .2s;
+        transition: border-color .25s, box-shadow .25s;
+        position: relative;
+        overflow: hidden;
+    }
+    .battle-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
     }
     .battle-card:hover,
-    .battle-card:focus-visible { border-color: var(--border-strong); }
+    .battle-card:focus-visible {
+        border-color: var(--gold-deep);
+        box-shadow: 0 0 24px rgba(212,165,71,.1);
+    }
     .battle-card:focus-visible {
         outline: 2px solid var(--gold);
         outline-offset: 2px;
     }
     .battle-eyebrow {
-        font-size: 11px;
+        font-family: var(--f-title);
+        font-size: 10px;
         font-weight: 700;
-        letter-spacing: 0.18em;
+        letter-spacing: 0.3em;
         text-transform: uppercase;
-        color: var(--gold-dim);
+        color: var(--gold);
         margin-bottom: var(--sp-2);
         display: flex;
         gap: var(--sp-2);
         align-items: center;
+        text-shadow: 0 0 12px rgba(212,165,71,.2);
     }
     .battle-eyebrow .locked-mark {
         font-style: italic;
         font-weight: 400;
         text-transform: none;
-        letter-spacing: 0.02em;
+        letter-spacing: 0.04em;
         color: var(--text-faint);
-        font-family: var(--font-display);
+        font-family: var(--f-body);
     }
     .battle-name {
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 19px;
-        line-height: 1.25;
-        letter-spacing: -0.02em;
-        color: var(--text-bright);
-        margin-bottom: var(--sp-3);
-        font-variation-settings: 'opsz' 36;
+        font-family: var(--f-display);
+        font-weight: 900;
+        font-size: 22px;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        background: linear-gradient(180deg, var(--gold-pale), var(--gold-bright) 70%, var(--gold));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: var(--sp-4);
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,.5));
     }
     .battle-winner {
         display: flex;
         align-items: center;
-        gap: var(--sp-2);
-        font-size: 14px;
-        color: var(--text-soft);
-        padding: var(--sp-3);
-        background: rgba(201,169,97,.05);
-        border: 1px solid rgba(201,169,97,.15);
+        gap: var(--sp-3);
+        font-family: var(--f-body);
+        padding: var(--sp-3) var(--sp-4);
+        background: linear-gradient(135deg, rgba(122,24,24,.25), rgba(74,8,8,.15));
+        border: 1px solid rgba(184,51,51,.3);
+        border-left: 3px solid var(--blood-fire);
         border-radius: var(--r-sm);
     }
+    .battle-winner .crown-icon { font-size: 22px; }
     .battle-winner .crown {
-        font-family: var(--font-display);
-        font-style: italic;
-        color: var(--gold);
-        font-weight: 600;
-        font-size: 12px;
-        letter-spacing: 0.1em;
+        font-family: var(--f-title);
+        font-weight: 700;
+        font-size: 10px;
+        letter-spacing: 0.3em;
         text-transform: uppercase;
+        color: var(--gold);
     }
     .battle-winner .name {
-        font-family: var(--font-display);
-        font-weight: 700;
+        font-family: var(--f-title);
+        font-weight: 800;
+        font-size: 17px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
         color: var(--text-bright);
-        font-size: 16px;
+        margin-top: 2px;
     }
-    .battle-results { display: none; margin-top: var(--sp-4); padding-top: var(--sp-4); border-top: 1px solid var(--border-subtle); }
-    .battle-results.is-open { display: block; }
+    .battle-winner .pts {
+        font-family: var(--f-display);
+        font-weight: 900;
+        background: linear-gradient(180deg, var(--gold-fire), var(--gold));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-left: var(--sp-2);
+    }
+
+    .battle-results { display: none; margin-top: var(--sp-4); padding-top: var(--sp-4); border-top: 1px solid var(--border); }
+    .battle-results.is-open { display: block; animation: reveal .3s ease; }
+
     .result-row {
         display: grid;
         grid-template-columns: auto auto 1fr auto;
         gap: var(--sp-3);
         align-items: center;
-        padding: var(--sp-3);
+        padding: var(--sp-3) var(--sp-4);
         border-radius: var(--r-sm);
-        margin-bottom: var(--sp-1);
-        background: rgba(255,255,255,.02);
+        margin-bottom: var(--sp-2);
+        background: linear-gradient(180deg, rgba(0,0,0,.3), rgba(0,0,0,.15));
         border: 1px solid var(--border-subtle);
     }
-    .result-row.is-1st { background: rgba(201,169,97,.06); border-color: rgba(201,169,97,.25); }
-    .result-rank {
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 18px;
-        color: var(--text-faint);
-        min-width: 24px;
-        text-align: center;
+    .result-row.is-1st {
+        background: linear-gradient(180deg, rgba(122,24,24,.2), rgba(74,8,8,.15));
+        border-color: var(--gold-deep);
+        box-shadow: inset 0 1px 0 rgba(244,200,104,.1);
     }
-    .result-row.is-1st .result-rank { color: var(--gold-bright); }
-    .result-emoji { font-size: 20px; }
+    .result-rank {
+        font-family: var(--f-display);
+        font-weight: 800;
+        font-size: 22px;
+        color: var(--text-faint);
+        min-width: 30px;
+        text-align: center;
+        line-height: 1;
+    }
+    .result-row.is-1st .result-rank {
+        background: linear-gradient(180deg, var(--gold-fire), var(--gold));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .result-emoji { font-size: 22px; }
     .result-name {
-        font-family: var(--font-display);
-        font-weight: 600;
-        font-size: 15px;
+        font-family: var(--f-title);
+        font-weight: 700;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
         color: var(--text-bright);
     }
     .result-badges {
-        margin-top: 2px;
-        font-size: 11px;
-        font-weight: 600;
+        margin-top: 3px;
+        font-family: var(--f-body);
+        font-style: italic;
+        font-size: 12px;
         color: var(--gold);
-        letter-spacing: 0.05em;
     }
     .result-pts {
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 20px;
+        font-family: var(--f-display);
+        font-weight: 800;
+        font-size: 22px;
         color: var(--text-bright);
         letter-spacing: -0.02em;
     }
-    .result-row.is-1st .result-pts { color: var(--gold-bright); }
+    .result-row.is-1st .result-pts {
+        background: linear-gradient(180deg, var(--gold-fire), var(--gold));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
     /* =========================================================
-       10. HALL DA FAMA
+       10. HALL DA FAMA — CARTAS HERÓICAS
        ========================================================= */
     .hall-card {
-        background: var(--surface);
+        background: linear-gradient(135deg, rgba(31,15,19,.95), rgba(22,11,14,.95));
         border: 1px solid var(--border);
-        border-radius: var(--r-lg);
-        padding: var(--sp-6);
-        margin-bottom: var(--sp-3);
+        border-radius: var(--r-md);
+        padding: var(--sp-7) var(--sp-5);
+        margin-bottom: var(--sp-4);
         text-align: center;
         position: relative;
         overflow: hidden;
+        box-shadow: var(--sh-md);
     }
     .hall-card::before {
         content: '';
-        position: absolute; inset: 0;
-        background: radial-gradient(ellipse 60% 50% at 50% 0%, var(--accent-glow, rgba(201,169,97,.06)), transparent 70%);
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse 70% 60% at 50% 0%, var(--accent-glow, rgba(212,165,71,.12)), transparent 70%);
         pointer-events: none;
     }
-    .hall-card.gold     { --accent-glow: rgba(201,169,97,.1); border-color: rgba(201,169,97,.4); }
-    .hall-card.danger   { --accent-glow: rgba(160,72,72,.1); border-color: rgba(160,72,72,.4); }
-    .hall-card.anel     { --accent-glow: rgba(90,133,104,.1); border-color: rgba(90,133,104,.4); }
-    .hall-card.northclaw{ --accent-glow: rgba(136,102,168,.12); border-color: rgba(136,102,168,.4); }
-    .hall-card.success  { --accent-glow: rgba(107,142,111,.1); border-color: rgba(107,142,111,.4); }
+    .hall-card::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 2px;
+        background: var(--accent-line, linear-gradient(90deg, transparent, var(--gold-fire), transparent));
+    }
+    .hall-card.gold      { --accent-glow: rgba(244,200,104,.18); --accent-line: linear-gradient(90deg, transparent, var(--gold-fire), transparent); border-color: var(--gold-dim); }
+    .hall-card.danger    { --accent-glow: rgba(184,51,51,.2); --accent-line: linear-gradient(90deg, transparent, var(--blood-fire), transparent); border-color: var(--blood); }
+    .hall-card.anel      { --accent-glow: rgba(136,192,154,.18); --accent-line: linear-gradient(90deg, transparent, var(--anel-bright), transparent); border-color: var(--anel); }
+    .hall-card.northclaw { --accent-glow: rgba(196,160,232,.2); --accent-line: linear-gradient(90deg, transparent, var(--northclaw-bright), transparent); border-color: var(--northclaw); }
+    .hall-card.success   { --accent-glow: rgba(136,192,154,.15); --accent-line: linear-gradient(90deg, transparent, var(--anel-bright), transparent); border-color: var(--anel-deep); }
+
     .hall-eyebrow {
+        font-family: var(--f-title);
         font-size: 11px;
         font-weight: 700;
-        letter-spacing: 0.22em;
+        letter-spacing: 0.4em;
         text-transform: uppercase;
         margin-bottom: var(--sp-3);
         position: relative;
+        text-shadow: 0 0 12px currentColor;
     }
-    .hall-card.gold     .hall-eyebrow { color: var(--gold-bright); }
-    .hall-card.danger   .hall-eyebrow { color: var(--danger-bright); }
-    .hall-card.anel     .hall-eyebrow { color: var(--anel-bright); }
+    .hall-card.gold      .hall-eyebrow { color: var(--gold-fire); }
+    .hall-card.danger    .hall-eyebrow { color: var(--blood-fire); }
+    .hall-card.anel      .hall-eyebrow { color: var(--anel-bright); }
     .hall-card.northclaw .hall-eyebrow { color: var(--northclaw-bright); }
-    .hall-card.success  .hall-eyebrow { color: var(--success-bright); }
-    .hall-emoji { font-size: 40px; margin-bottom: var(--sp-3); position: relative; }
+    .hall-card.success   .hall-eyebrow { color: var(--anel-bright); }
+
+    .hall-emoji {
+        font-size: 56px;
+        margin-bottom: var(--sp-3);
+        position: relative;
+        filter: drop-shadow(0 4px 8px rgba(0,0,0,.6));
+    }
     .hall-name {
-        font-family: var(--font-display);
-        font-weight: 800;
-        font-size: 24px;
-        color: var(--text-bright);
-        letter-spacing: -0.02em;
-        line-height: 1.1;
+        font-family: var(--f-display);
+        font-weight: 900;
+        font-size: 28px;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        line-height: 1.05;
         margin-bottom: var(--sp-2);
         position: relative;
+        background: linear-gradient(180deg, var(--gold-pale), var(--gold-bright), var(--gold));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,.6));
     }
     .hall-stat {
-        font-family: var(--font-display);
+        font-family: var(--f-title);
         font-weight: 700;
-        font-size: 17px;
-        color: var(--gold);
+        font-size: 15px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--text-bright);
         margin-bottom: var(--sp-2);
         position: relative;
     }
+    .hall-stat strong {
+        font-family: var(--f-display);
+        font-size: 22px;
+        font-weight: 900;
+        background: linear-gradient(180deg, var(--gold-fire), var(--gold));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-right: 2px;
+    }
     .hall-title {
-        font-family: var(--font-display);
+        font-family: var(--f-body);
         font-style: italic;
-        font-size: 13px;
+        font-weight: 500;
+        font-size: 15px;
         color: var(--text-soft);
         position: relative;
+    }
+
+    .featured-eyebrow {
+        text-align: center;
+        font-family: var(--f-display);
+        font-weight: 900;
+        font-size: 14px;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        margin: var(--sp-6) 0 var(--sp-5);
+        background: linear-gradient(180deg, var(--gold-fire), var(--gold));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 12px rgba(244,200,104,.2));
+        display: flex; align-items: center; justify-content: center;
+        gap: var(--sp-3);
+    }
+    .featured-eyebrow::before, .featured-eyebrow::after {
+        content: '';
+        flex: 0 1 60px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+        -webkit-text-fill-color: initial;
     }
 
     /* =========================================================
        11. REGRAS
        ========================================================= */
     .rules-block {
-        background: var(--surface);
+        background: linear-gradient(180deg, rgba(31,15,19,.7), rgba(22,11,14,.95));
         border: 1px solid var(--border);
-        border-radius: var(--r-lg);
+        border-radius: var(--r-md);
         padding: var(--sp-5);
         margin-bottom: var(--sp-4);
+        position: relative;
+    }
+    .rules-block::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
     }
     .rules-block-title {
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 0.22em;
+        font-family: var(--f-display);
+        font-weight: 900;
+        font-size: 14px;
+        letter-spacing: 0.3em;
         text-transform: uppercase;
-        color: var(--gold);
+        background: linear-gradient(180deg, var(--gold-fire), var(--gold));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
         margin-bottom: var(--sp-4);
         padding-bottom: var(--sp-3);
-        border-bottom: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border);
+        text-align: center;
+        filter: drop-shadow(0 0 8px rgba(244,200,104,.2));
     }
     .rules-table {
         width: 100%;
         border-collapse: collapse;
-        font-size: 14px;
+        font-size: 15px;
     }
     .rules-table th {
         text-align: left;
-        padding: var(--sp-2) var(--sp-2);
-        font-size: 12px;
+        padding: var(--sp-2);
+        font-family: var(--f-title);
+        font-size: 9px;
         font-weight: 700;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.25em;
         text-transform: uppercase;
-        color: var(--text-muted);
-        border-bottom: 1px solid var(--border-subtle);
+        color: var(--gold-dim);
+        border-bottom: 1px solid var(--border);
     }
     .rules-table td {
         padding: var(--sp-3) var(--sp-2);
@@ -915,25 +1256,58 @@
     }
     .rules-table tr:last-child td { border-bottom: 0; }
     .rules-table .name {
-        font-family: var(--font-display);
+        font-family: var(--f-title);
         font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
         color: var(--text-bright);
     }
-    .rules-table .pts-pos { color: var(--success-bright); font-weight: 700; font-family: var(--font-display); }
-    .rules-table .pts-neg { color: var(--danger-bright); font-weight: 700; font-family: var(--font-display); }
-    .rules-table .pts-bonus { color: var(--gold-bright); font-weight: 700; font-family: var(--font-display); }
+    .rules-table .pts-pos {
+        font-family: var(--f-display);
+        font-weight: 800;
+        background: linear-gradient(180deg, var(--anel-bright), var(--anel));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .rules-table .pts-neg {
+        font-family: var(--f-display);
+        font-weight: 800;
+        background: linear-gradient(180deg, var(--blood-fire), var(--blood));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .rules-table .pts-bonus {
+        font-family: var(--f-display);
+        font-weight: 800;
+        background: linear-gradient(180deg, var(--gold-fire), var(--gold));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
     .rule-warn {
-        background: rgba(160,72,72,.06);
-        border: 1px solid rgba(160,72,72,.25);
-        border-radius: var(--r-md);
-        padding: var(--sp-4);
+        background: linear-gradient(135deg, rgba(184,51,51,.18), rgba(74,8,8,.1));
+        border: 1px solid var(--blood-bright);
+        border-left: 4px solid var(--blood-fire);
+        border-radius: var(--r-sm);
+        padding: var(--sp-4) var(--sp-5);
         margin-bottom: var(--sp-5);
-        font-size: 14px;
+        font-family: var(--f-body);
+        font-size: 16px;
+        line-height: 1.6;
         color: var(--text);
-        line-height: 1.55;
+        box-shadow: 0 0 24px rgba(184,51,51,.15);
     }
-    .rule-warn strong { color: var(--danger-bright); }
+    .rule-warn strong {
+        font-family: var(--f-title);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--blood-fire);
+        text-shadow: 0 0 12px rgba(224,72,72,.3);
+    }
 
     /* =========================================================
        12. BOTTOM NAV
@@ -941,15 +1315,23 @@
     .bottom-nav {
         position: fixed;
         bottom: 0; left: 0; right: 0;
-        min-height: var(--nav-height);
-        background: rgba(15,14,12,.96);
+        background:
+            linear-gradient(180deg, rgba(5,3,4,.92) 0%, rgba(22,11,14,.98) 100%);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
-        border-top: 1px solid var(--border);
+        border-top: 1px solid var(--gold-deep);
         display: flex;
         justify-content: space-around;
         padding: var(--sp-2) var(--sp-1) calc(var(--sp-3) + env(safe-area-inset-bottom, 0));
         z-index: 100;
+        box-shadow: 0 -8px 32px rgba(0,0,0,.6);
+    }
+    .bottom-nav::before {
+        content: '';
+        position: absolute;
+        top: -1px; left: 0; right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent 0%, var(--gold-dim) 25%, var(--gold) 50%, var(--gold-dim) 75%, transparent 100%);
     }
     .nav-btn {
         flex: 1;
@@ -960,36 +1342,45 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 2px;
-        font-family: var(--font-body);
-        font-size: 11px;
+        gap: 3px;
+        font-family: var(--f-title);
+        font-size: 9px;
         font-weight: 700;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.15em;
         text-transform: uppercase;
-        color: var(--text-muted);
-        min-height: 48px;
-        transition: color .15s ease;
+        color: var(--text-faint);
+        min-height: 52px;
+        transition: color .15s ease, transform .1s;
         position: relative;
     }
     .nav-btn .nav-icon {
-        font-size: 20px;
+        font-family: var(--f-display);
+        font-weight: 900;
+        font-size: 18px;
         line-height: 1;
-        font-family: var(--font-display);
-        font-weight: 700;
         color: inherit;
     }
-    .nav-btn.is-active { color: var(--gold-bright); }
-    .nav-btn.is-active::before {
+    .nav-btn.is-active {
+        color: var(--gold-bright);
+    }
+    .nav-btn.is-active .nav-icon {
+        background: linear-gradient(180deg, var(--gold-fire), var(--gold));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 8px rgba(244,200,104,.5));
+    }
+    .nav-btn.is-active::after {
         content: '';
         position: absolute;
         top: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: 24px;
+        width: 28px;
         height: 2px;
-        background: var(--gold-bright);
-        border-radius: 0 0 2px 2px;
+        background: linear-gradient(90deg, transparent, var(--gold-fire), transparent);
     }
+    .nav-btn:active { transform: scale(0.94); }
     .nav-btn:focus-visible {
         outline: 2px solid var(--gold);
         outline-offset: -2px;
@@ -1000,9 +1391,9 @@
        13. TABS
        ========================================================= */
     .tab-content { display: none; }
-    .tab-content.is-active { display: block; animation: fade-in .25s ease; }
+    .tab-content.is-active { display: block; animation: fade-in .35s ease; }
     @keyframes fade-in {
-        from { opacity: 0; transform: translateY(6px); }
+        from { opacity: 0; transform: translateY(8px); }
         to   { opacity: 1; transform: translateY(0); }
     }
 
@@ -1010,49 +1401,61 @@
        14. FOOTER
        ========================================================= */
     .footer {
-        margin-top: var(--sp-7);
-        padding: var(--sp-5) var(--sp-4);
+        margin-top: var(--sp-8);
+        padding: var(--sp-6) var(--sp-4);
         text-align: center;
-        border-top: 1px solid var(--border-subtle);
+        position: relative;
+    }
+    .footer::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 50%;
+        transform: translateX(-50%);
+        width: 30%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
     }
     .footer-quote {
-        font-family: var(--font-display);
+        font-family: var(--f-body);
         font-style: italic;
-        font-size: 16px;
-        color: var(--gold-dim);
-        line-height: 1.5;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 1.55;
         max-width: 380px;
-        margin: 0 auto var(--sp-2);
+        margin: 0 auto var(--sp-3);
+        color: var(--gold);
+        text-shadow: 0 0 12px rgba(212,165,71,.2);
+    }
+    .footer-quote::before, .footer-quote::after {
+        content: '"';
+        font-size: 1.4em;
+        color: var(--gold-dim);
+        vertical-align: -0.2em;
+        margin: 0 4px;
     }
     .footer-info {
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.08em;
+        font-family: var(--f-title);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.25em;
         text-transform: uppercase;
-        color: var(--text-muted);
+        color: var(--gold-dim);
     }
 
     /* =========================================================
-       15. UTIL
+       15. UTIL / SCROLLBAR
        ========================================================= */
     .divider {
         border: 0;
-        border-top: 1px solid var(--border-subtle);
-        margin: var(--sp-6) 0;
-    }
-    .featured-eyebrow {
-        text-align: center;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: var(--sp-4);
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+        margin: var(--sp-7) auto;
+        max-width: 60%;
     }
 
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb { background: var(--gold-deep); border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: var(--gold-dim); }
     </style>
 </head>
@@ -1061,25 +1464,28 @@
 <!-- LOADING -->
 <div class="screen-overlay" id="loading-screen" role="status" aria-live="polite">
     <div class="loading-mark" aria-hidden="true"></div>
-    <div class="loading-text">Carregando os Reinos</div>
+    <div class="loading-text">Convocando os Reinos</div>
 </div>
 
 <!-- ERROR -->
 <div class="screen-overlay" id="error-screen" role="alert">
-    <div class="error-mark" aria-hidden="true">!</div>
-    <div class="error-title">Falha ao carregar</div>
+    <div class="error-mark" aria-hidden="true"><span>!</span></div>
+    <div class="error-title">Falha ao Convocar</div>
     <div class="error-msg" id="error-msg"></div>
 </div>
 
 <!-- HEADER -->
 <header class="header">
     <div class="header-inner">
-        <div class="header-eyebrow">Bolão Cartola · Temporada 2026</div>
-        <h1 class="header-title">Guerra dos <em>Reinos</em></h1>
+        <div class="header-eyebrow">Bolão Cartola · Anno MMXXVI</div>
+        <h1 class="header-title">Guerra <em>dos</em> Reinos</h1>
         <div class="header-meta">
-            <span>Rodada <span class="round-pill"><span id="current-round" class="num">—</span><span class="of"> / 38</span></span></span>
-            <span class="dot" aria-hidden="true"></span>
-            <span>9 Casas · 3 Alianças</span>
+            <span>Rodada</span>
+            <span class="round-pill"><span id="current-round" class="num">—</span><span class="of">/ XXXVIII</span></span>
+            <span class="sep">✦</span>
+            <span>IX Casas</span>
+            <span class="sep">✦</span>
+            <span>III Alianças</span>
         </div>
     </div>
 </header>
@@ -1090,7 +1496,10 @@
     <section id="tab-ranking" class="tab-content is-active" aria-labelledby="head-ranking">
         <div class="section-head">
             <div class="section-eyebrow">Capítulo I</div>
-            <h2 class="section-title" id="head-ranking">Classificação Geral</h2>
+            <h2 class="section-title" id="head-ranking">Trono de Ferro</h2>
+            <div class="section-decorative">
+                <span class="section-decorative-mark">⚔ ✦ ⚔</span>
+            </div>
         </div>
         <div id="ranking-list"></div>
     </section>
@@ -1098,7 +1507,10 @@
     <section id="tab-aliancas" class="tab-content" aria-labelledby="head-aliancas">
         <div class="section-head">
             <div class="section-eyebrow">Capítulo II</div>
-            <h2 class="section-title" id="head-aliancas">Batalha das Alianças</h2>
+            <h2 class="section-title" id="head-aliancas">Bandeiras de Guerra</h2>
+            <div class="section-decorative">
+                <span class="section-decorative-mark">⚔ ✦ ⚔</span>
+            </div>
         </div>
         <div id="aliancas-content"></div>
     </section>
@@ -1107,6 +1519,9 @@
         <div class="section-head">
             <div class="section-eyebrow">Capítulo III</div>
             <h2 class="section-title" id="head-medieval">Pontos Medievais</h2>
+            <div class="section-decorative">
+                <span class="section-decorative-mark">⚔ ✦ ⚔</span>
+            </div>
         </div>
         <div id="medieval-list"></div>
     </section>
@@ -1114,7 +1529,10 @@
     <section id="tab-battles" class="tab-content" aria-labelledby="head-battles">
         <div class="section-head">
             <div class="section-eyebrow">Capítulo IV</div>
-            <h2 class="section-title" id="head-battles">Histórico de Batalhas</h2>
+            <h2 class="section-title" id="head-battles">Crônica de Batalhas</h2>
+            <div class="section-decorative">
+                <span class="section-decorative-mark">⚔ ✦ ⚔</span>
+            </div>
         </div>
         <div id="battles-list"></div>
     </section>
@@ -1123,6 +1541,9 @@
         <div class="section-head">
             <div class="section-eyebrow">Capítulo V</div>
             <h2 class="section-title" id="head-achievements">Hall da Fama</h2>
+            <div class="section-decorative">
+                <span class="section-decorative-mark">⚔ ✦ ⚔</span>
+            </div>
         </div>
         <div id="achievements-list"></div>
     </section>
@@ -1130,13 +1551,16 @@
     <section id="tab-rules" class="tab-content" aria-labelledby="head-rules">
         <div class="section-head">
             <div class="section-eyebrow">Apêndice</div>
-            <h2 class="section-title" id="head-rules">Regras do Reino</h2>
+            <h2 class="section-title" id="head-rules">Códice do Reino</h2>
+            <div class="section-decorative">
+                <span class="section-decorative-mark">⚔ ✦ ⚔</span>
+            </div>
         </div>
         <div id="rules-content"></div>
     </section>
 
     <footer class="footer">
-        <div class="footer-quote">"A glória não se mede apenas em pontos, mas em conquistas eternas."</div>
+        <div class="footer-quote">A glória não se mede apenas em pontos, mas em conquistas eternas.</div>
         <div class="footer-info">Sistema v3.3 · <span id="last-updated"></span></div>
     </footer>
 
@@ -1145,13 +1569,13 @@
 <!-- BOTTOM NAV -->
 <nav class="bottom-nav" role="tablist" aria-label="Navegação principal">
     <button class="nav-btn is-active" data-tab="ranking" role="tab" aria-selected="true">
-        <span class="nav-icon">I</span><span>Ranking</span>
+        <span class="nav-icon">I</span><span>Trono</span>
     </button>
     <button class="nav-btn" data-tab="aliancas" role="tab" aria-selected="false">
         <span class="nav-icon">II</span><span>Alianças</span>
     </button>
     <button class="nav-btn" data-tab="medieval" role="tab" aria-selected="false">
-        <span class="nav-icon">III</span><span>Medieval</span>
+        <span class="nav-icon">III</span><span>Pontos</span>
     </button>
     <button class="nav-btn" data-tab="battles" role="tab" aria-selected="false">
         <span class="nav-icon">IV</span><span>Batalhas</span>
@@ -1160,7 +1584,7 @@
         <span class="nav-icon">V</span><span>Títulos</span>
     </button>
     <button class="nav-btn" data-tab="rules" role="tab" aria-selected="false">
-        <span class="nav-icon">§</span><span>Regras</span>
+        <span class="nav-icon">§</span><span>Códice</span>
     </button>
 </nav>
 
@@ -1172,20 +1596,20 @@
    ========================================================= */
 const CONFIG = {
     csvUrl: 'dados.csv',
-    medievalStart: 6,   // pontos medievais e títulos só ativam aqui
+    medievalStart: 6,
     totalRounds: 38,
 };
 
 const LORDS = [
-    { name:'Icebergteam',     house:'Forja Polar',          avatar:'❄️',  color:'#7ECFD3', alliance:'anel'      },
-    { name:'Sons of Númenor', house:'Herdeiros de Elendil', avatar:'🛡️',  color:'#7AA0E0', alliance:'bastardos' },
-    { name:'Ironverdict',     house:'Forja da Justiça',     avatar:'🗡️',  color:'#A0A0A8', alliance:'bastardos' },
-    { name:'CEEC',            house:'Mestre das Espadas',   avatar:'⚔️',  color:'#C77878', alliance:'northclaw' },
-    { name:'Otopatamá',       house:'Samurais Guerreiros',  avatar:'🤖',  color:'#7AA8E0', alliance:'northclaw' },
-    { name:'Andorinha Jr',    house:'Jovem Veloz',          avatar:'🐦',  color:'#E89878', alliance:'anel'      },
-    { name:'Andorinha',       house:'Senhores do Voo',      avatar:'🦅',  color:'#D4736B', alliance:'anel'      },
-    { name:'Varelitas',       house:'Guardas da Colina',    avatar:'🦊',  color:'#88B095', alliance:'bastardos' },
-    { name:'Lobonegro',       house:'Agente do Caos',       avatar:'🐺',  color:'#9888B8', alliance:'bastardos' },
+    { name:'Icebergteam',     house:'Forja Polar',          avatar:'❄️',  alliance:'anel'      },
+    { name:'Sons of Númenor', house:'Herdeiros de Elendil', avatar:'🛡️',  alliance:'bastardos' },
+    { name:'Ironverdict',     house:'Forja da Justiça',     avatar:'🗡️',  alliance:'bastardos' },
+    { name:'CEEC',            house:'Mestre das Espadas',   avatar:'⚔️',  alliance:'northclaw' },
+    { name:'Otopatamá',       house:'Samurais Guerreiros',  avatar:'🤖',  alliance:'northclaw' },
+    { name:'Andorinha Jr',    house:'Jovem Veloz',          avatar:'🐦',  alliance:'anel'      },
+    { name:'Andorinha',       house:'Senhores do Voo',      avatar:'🦅',  alliance:'anel'      },
+    { name:'Varelitas',       house:'Guardas da Colina',    avatar:'🦊',  alliance:'bastardos' },
+    { name:'Lobonegro',       house:'Agente do Caos',       avatar:'🐺',  alliance:'bastardos' },
 ];
 
 const ALLIANCES = {
@@ -1241,6 +1665,19 @@ const escHTML = str => String(str ?? '').replace(/[&<>"']/g, ch => ({
     '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
 }[ch]));
 
+/** Converte número arábico para algarismo romano. */
+function toRoman(num) {
+    if (!num || num < 1) return '—';
+    const map = [
+        [1000,'M'],[900,'CM'],[500,'D'],[400,'CD'],
+        [100,'C'],[90,'XC'],[50,'L'],[40,'XL'],
+        [10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']
+    ];
+    let r = '', n = num;
+    for (const [v, s] of map) while (n >= v) { r += s; n -= v; }
+    return r;
+}
+
 const findLord = name => LORDS.find(l => l.name.toLowerCase().trim() === name.toLowerCase().trim());
 
 function getTitle(type, count) {
@@ -1250,18 +1687,14 @@ function getTitle(type, count) {
 }
 
 /* =========================================================
-   3.  CSV PARSING (robusto: BOM, ; , , ", espaços)
+   3.  CSV PARSING
    ========================================================= */
 function parseCSV(text) {
     if (!text) return [];
-    // remove BOM
     text = text.replace(/^\uFEFF/, '').trim();
     const lines = text.split(/\r?\n/);
     if (lines.length < 2) return [];
-
-    // detecta delimitador
-    const header = lines[0];
-    const delim = header.includes(';') ? ';' : ',';
+    const delim = lines[0].includes(';') ? ';' : ',';
 
     const rows = [];
     for (let i = 1; i < lines.length; i++) {
@@ -1272,9 +1705,7 @@ function parseCSV(text) {
         const rodada = parseInt(parts[0], 10);
         const time   = parts[1];
         const pontos = parseFloat(String(parts[2]).replace(',', '.'));
-        if (!isNaN(rodada) && time && !isNaN(pontos)) {
-            rows.push({ rodada, time, pontos });
-        }
+        if (!isNaN(rodada) && time && !isNaN(pontos)) rows.push({ rodada, time, pontos });
     }
     return rows;
 }
@@ -1294,32 +1725,28 @@ function buildBattles(rows) {
 }
 
 /* =========================================================
-   4.  CÁLCULO DOS PONTOS MEDIEVAIS
+   4.  CÁLCULO MEDIEVAL
    ========================================================= */
 const TIERS = {
-    mvp:         [[15,200], [10,135], [7,95], [5,65], [3,40]], per:10,
-    podio:       [[15, 75], [10, 45], [8,34], [5,20]],         per:3,
-    mitada:      [[10,100], [7,70], [5,45], [3,23]],           per:5,
-    recuperacao: [[7,96],   [5,65], [3,36]],                   per:8,
-    massacre:    [[7,62],   [5,40], [3,22]],                   per:6,
-    lanterna:    [[10,100], [7,70], [5,45], [3,23]],           per:5,
+    mvp:         { steps: [[15,200],[10,135],[7,95],[5,65],[3,40]], per:10 },
+    podio:       { steps: [[15,75],[10,45],[8,34],[5,20]],          per:3  },
+    mitada:      { steps: [[10,100],[7,70],[5,45],[3,23]],          per:5  },
+    recuperacao: { steps: [[7,96],[5,65],[3,36]],                   per:8  },
+    massacre:    { steps: [[7,62],[5,40],[3,22]],                   per:6  },
+    lanterna:    { steps: [[10,100],[7,70],[5,45],[3,23]],          per:5  },
 };
-
 function tierPoints(type, count) {
     const conf = TIERS[type];
-    for (const [min, pts] of conf) if (count >= min) return pts;
+    for (const [min, pts] of conf.steps) if (count >= min) return pts;
     return count * conf.per;
 }
-
 function calcMedieval(a) {
-    let p = 0;
-    p += tierPoints('mvp',         a.mvp || 0);
-    p += tierPoints('podio',       a.podio || 0);
-    p += tierPoints('mitada',      a.mitada || 0);
-    p += tierPoints('recuperacao', a.recuperacao || 0);
-    p += tierPoints('massacre',    a.massacre || 0);
-    p -= tierPoints('lanterna',    a.lanterna || 0);
-    return p;
+    return tierPoints('mvp', a.mvp||0)
+         + tierPoints('podio', a.podio||0)
+         + tierPoints('mitada', a.mitada||0)
+         + tierPoints('recuperacao', a.recuperacao||0)
+         + tierPoints('massacre', a.massacre||0)
+         - tierPoints('lanterna', a.lanterna||0);
 }
 
 /* =========================================================
@@ -1328,16 +1755,12 @@ function calcMedieval(a) {
 function processAll(BATTLES) {
     const ld = LORDS.map(l => ({
         ...l,
-        cartolaPoints: 0, medievalPoints: 0, totalPoints: 0,
-        roundsPlayed: 0,
-        // contadores totais (todas as rodadas, exibição)
+        cartolaPoints:0, medievalPoints:0, totalPoints:0, roundsPlayed:0,
         mvp:0, podio:0, mitada:0, recuperacao:0, massacre:0, lanterna:0,
-        // contadores válidos para pontos/títulos (R6+)
         mvpCalc:0, podioCalc:0, mitadaCalc:0, recuperacaoCalc:0, massacreCalc:0, lanternaCalc:0, bonusG2:0,
         currentTitle: DEFAULT_TITLE,
     }));
 
-    // pass 1: pontos cartola e rodadas jogadas
     BATTLES.forEach(battle => {
         battle.results.forEach(r => {
             const lord = findLord(r.name); if (!lord) return;
@@ -1347,7 +1770,6 @@ function processAll(BATTLES) {
         });
     });
 
-    // snapshot de acumulado por rodada (para massacre)
     const acum = {}; LORDS.forEach(l => acum[l.name] = 0);
     const acumByRound = {};
     BATTLES.forEach(b => {
@@ -1355,13 +1777,12 @@ function processAll(BATTLES) {
         acumByRound[b.week] = { ...acum };
     });
 
-    let prev = {}; // pontuação da rodada anterior por lord
+    let prev = {};
 
     BATTLES.forEach((battle, idx) => {
         const sorted = [...battle.results].sort((a,b) => b.points - a.points);
         const act = battle.medievalActive;
 
-        // ranking acumulado antes/depois para massacre
         const prevB = BATTLES[idx-1];
         const beforeSnap = prevB ? acumByRound[prevB.week] : Object.fromEntries(LORDS.map(l => [l.name, 0]));
         const afterSnap = acumByRound[battle.week];
@@ -1374,11 +1795,8 @@ function processAll(BATTLES) {
             const t = ld.find(x => x.name.toLowerCase().trim() === r.name.toLowerCase().trim());
             if (!t) return;
 
-            // MVP
-            if (pos === 0 && r.points > 0) { t.mvp++; if (act) t.mvpCalc++; }
-            // Pódio (2º ou 3º)
-            if (pos === 1 || pos === 2) { t.podio++; if (act) t.podioCalc++; }
-            // Mitada + bônus G2
+            if (pos === 0 && r.points > 0)            { t.mvp++;  if (act) t.mvpCalc++; }
+            if (pos === 1 || pos === 2)               { t.podio++; if (act) t.podioCalc++; }
             if (r.points >= 80) {
                 t.mitada++;
                 if (act) {
@@ -1388,13 +1806,10 @@ function processAll(BATTLES) {
                     else if (r.points >= 90)  t.bonusG2 += 4;
                 }
             }
-            // Lanterna
             if (pos === sorted.length-1 && r.points > 0) { t.lanterna++; if (act) t.lanternaCalc++; }
-            // Recuperação
             if (idx > 0 && (prev[r.name] || 0) > 0 && (r.points - prev[r.name]) >= 50) {
                 t.recuperacao++; if (act) t.recuperacaoCalc++;
             }
-            // Massacre
             if (idx > 0 && (posB[r.name] ?? 999) > (posA[r.name] ?? 999)) {
                 let hm = false;
                 for (const o of LORDS) {
@@ -1412,7 +1827,6 @@ function processAll(BATTLES) {
         battle.results.forEach(r => prev[r.name] = r.points);
     });
 
-    // finalize
     const lastRound = BATTLES.length ? Math.max(...BATTLES.map(b => b.week)) : 0;
     ld.forEach(t => {
         if (lastRound < CONFIG.medievalStart) {
@@ -1423,7 +1837,6 @@ function processAll(BATTLES) {
                 mvp: t.mvpCalc, podio: t.podioCalc, mitada: t.mitadaCalc,
                 recuperacao: t.recuperacaoCalc, massacre: t.massacreCalc, lanterna: t.lanternaCalc,
             }) + t.bonusG2;
-
             t.currentTitle =
                 getTitle('mvp', t.mvpCalc) ||
                 getTitle('mitada', t.mitadaCalc) ||
@@ -1457,13 +1870,16 @@ function buildStatGrid(lord, useCalc=false) {
         ['Massacre',  lord['massacre'+k],    useCalc ? getTitle('massacre', lord.massacreCalc) : ''],
         ['Lanterna',  lord['lanterna'+k],    useCalc ? getTitle('lanterna', lord.lanternaCalc) : '', true],
     ];
-    return `<div class="stats-grid">${cells.map(([label, value, sub, isNeg]) => `
-        <div class="stat-cell">
+    return `<div class="stats-grid">${cells.map(([label, value, sub, isNeg]) => {
+        const cellCls = value > 0 ? (isNeg ? 'has-neg' : 'has-value') : '';
+        const valCls = value > 0 ? (isNeg ? 'is-negative' : 'is-active') : '';
+        return `
+        <div class="stat-cell ${cellCls}">
             <div class="stat-label">${label}</div>
-            <div class="stat-value ${value > 0 ? (isNeg ? 'is-negative' : 'has-value') : ''}">${value}<span style="font-size:.6em;opacity:.6">×</span></div>
+            <div class="stat-value ${valCls}">${value}<span style="font-size:.55em;opacity:.5;font-weight:400">×</span></div>
             ${sub ? `<div class="stat-sub">${escHTML(sub)}</div>` : ''}
-        </div>
-    `).join('')}</div>`;
+        </div>`;
+    }).join('')}</div>`;
 }
 
 /* =========================================================
@@ -1472,14 +1888,19 @@ function buildStatGrid(lord, useCalc=false) {
 function renderRanking(data, lastRound) {
     const locked = lastRound < CONFIG.medievalStart;
     const root = $('#ranking-list');
+    const lastIdx = data.length - 1;
 
     let html = '';
     if (locked) {
-        html += `<div class="notice"><div class="notice-mark">i</div><div>Pontos medievais e títulos ativam na <strong>Rodada ${CONFIG.medievalStart}</strong>. O ranking abaixo considera apenas pontuação Cartola.</div></div>`;
+        html += `<div class="notice">Os pontos medievais e títulos ativam na <strong>Rodada ${CONFIG.medievalStart}</strong>. O ranking abaixo considera apenas pontuação Cartola.</div>`;
     }
 
     html += data.map((lord, i) => {
-        const posClass = i === 0 ? 'is-1st' : i === 1 ? 'is-2nd' : i === 2 ? 'is-3rd' : '';
+        const posClass =
+            i === 0 ? 'is-1st' :
+            i === 1 ? 'is-2nd' :
+            i === 2 ? 'is-3rd' :
+            i === lastIdx ? 'is-last' : '';
         const med = lord.medievalPoints;
         const medClass = med > 0 ? 'pos' : med < 0 ? 'neg' : 'muted';
         const medValue = locked ? `R${CONFIG.medievalStart}` : `${med >= 0 ? '+' : ''}${med}`;
@@ -1488,7 +1909,7 @@ function renderRanking(data, lastRound) {
         return `
         <article class="lord-card is-clickable ${posClass}" data-lord="r${i}" tabindex="0" role="button" aria-expanded="false">
             <div class="lord-row">
-                <div class="lord-rank">${i+1}</div>
+                <div class="lord-rank">${toRoman(i+1)}</div>
                 <div class="lord-id">
                     <div class="lord-name">${escHTML(lord.name)}</div>
                     <div class="lord-house">${escHTML(lord.house)}</div>
@@ -1519,20 +1940,16 @@ function renderRanking(data, lastRound) {
             <div class="lord-details" id="details-r${i}">
                 ${buildStatGrid(lord)}
             </div>
-            <div class="toggle-hint" id="hint-r${i}">Toque para ver conquistas</div>
+            <div class="toggle-hint" id="hint-r${i}">▼ Toque para conquistas</div>
         </article>`;
     }).join('');
 
     root.innerHTML = html;
 
-    // Attach toggle handlers
     $$('.lord-card.is-clickable', root).forEach(card => {
         card.addEventListener('click', () => toggleCard(card));
         card.addEventListener('keydown', e => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggleCard(card);
-            }
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleCard(card); }
         });
     });
 }
@@ -1543,7 +1960,7 @@ function toggleCard(card) {
     const hint = $('#hint-' + id);
     const isOpen = details.classList.toggle('is-open');
     card.setAttribute('aria-expanded', isOpen);
-    if (hint) hint.textContent = isOpen ? 'Toque para recolher' : 'Toque para ver conquistas';
+    if (hint) hint.textContent = isOpen ? '▲ Recolher' : '▼ Toque para conquistas';
 }
 
 /* =========================================================
@@ -1554,8 +1971,7 @@ function renderAliancas(data) {
         const members = data.filter(l => l.alliance === key);
         const total = members.reduce((s,l) => s + l.totalPoints, 0);
         return {
-            key,
-            ...ALLIANCES[key],
+            key, ...ALLIANCES[key],
             membersData: members,
             total,
             avg: total / (members.length || 1),
@@ -1564,10 +1980,10 @@ function renderAliancas(data) {
 
     let html = `
     <div class="scoreboard">
-        <div class="scoreboard-title">Classificação das Alianças</div>
+        <div class="scoreboard-title">⚔ Classificação ⚔</div>
         ${stats.map((al, i) => `
             <div class="alliance-rank-row ${al.key}">
-                <div class="alliance-rank is-${i+1}">${i+1}</div>
+                <div class="alliance-rank is-${i+1}">${toRoman(i+1)}</div>
                 <div class="alliance-emoji" aria-hidden="true">${al.icon}</div>
                 <div>
                     <div class="alliance-rank-name">${escHTML(al.label)}</div>
@@ -1627,12 +2043,12 @@ function renderMedieval(data, lastRound) {
     const root = $('#medieval-list');
 
     let html = locked
-        ? `<div class="notice"><div class="notice-mark">i</div><div>Pontos medievais e títulos ativam na <strong>Rodada ${CONFIG.medievalStart}</strong>. Todas as conquistas começam do zero a partir dessa rodada.</div></div>`
-        : `<div class="notice"><div class="notice-mark">✓</div><div>Pontos medievais ativos desde a <strong>Rodada ${CONFIG.medievalStart}</strong>.</div></div>`;
+        ? `<div class="notice">Os pontos medievais e títulos ativam na <strong>Rodada ${CONFIG.medievalStart}</strong>. Todas as conquistas começam do zero a partir dessa rodada.</div>`
+        : `<div class="notice"><strong>Pontos medievais ativos</strong> desde a Rodada ${CONFIG.medievalStart}.</div>`;
 
     if (locked) {
         html += [...data].sort((a,b) => a.name.localeCompare(b.name)).map(lord => `
-            <article class="lord-card" style="opacity:.55">
+            <article class="lord-card" style="opacity:.5">
                 <div class="lord-row">
                     <div class="lord-rank">—</div>
                     <div class="lord-id">
@@ -1640,7 +2056,7 @@ function renderMedieval(data, lastRound) {
                         <div class="lord-tags">${buildAllianceTag(lord)}</div>
                     </div>
                     <div class="lord-points">
-                        <div class="total-points" style="color:var(--text-faint)">—</div>
+                        <div class="total-points" style="-webkit-text-fill-color:var(--text-faint);background:none;color:var(--text-faint);">—</div>
                         <div class="points-meta">Aguardando R${CONFIG.medievalStart}</div>
                     </div>
                 </div>
@@ -1648,12 +2064,14 @@ function renderMedieval(data, lastRound) {
     } else {
         html += [...data].sort((a,b) => b.medievalPoints - a.medievalPoints).map(lord => {
             const med = lord.medievalPoints;
-            const cls = med > 0 ? 'has-value' : med < 0 ? 'is-negative' : '';
             const sign = med > 0 ? '+' : '';
+            let pointsStyle = '';
+            if (med < 0) pointsStyle = 'background:linear-gradient(180deg,var(--blood-fire),var(--blood));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;';
+            else if (med === 0) pointsStyle = 'background:none;-webkit-text-fill-color:var(--text-muted);color:var(--text-muted);';
             return `
             <article class="lord-card">
                 <div class="lord-row">
-                    <div class="lord-rank">${lord.avatar}</div>
+                    <div class="lord-rank" style="font-size:42px">${lord.avatar}</div>
                     <div class="lord-id">
                         <div class="lord-name">${escHTML(lord.name)}</div>
                         <div class="lord-tags">
@@ -1662,7 +2080,7 @@ function renderMedieval(data, lastRound) {
                         </div>
                     </div>
                     <div class="lord-points">
-                        <div class="total-points ${cls}" style="color:${med > 0 ? 'var(--gold-bright)' : med < 0 ? 'var(--danger-bright)' : 'var(--text-muted)'}">${sign}${med}</div>
+                        <div class="total-points" style="${pointsStyle}">${sign}${med}</div>
                         <div class="points-meta">Pts. Medievais</div>
                     </div>
                 </div>
@@ -1679,20 +2097,20 @@ function renderMedieval(data, lastRound) {
 function renderBattles(BATTLES, data) {
     const html = [...BATTLES].reverse().map(battle => {
         const sorted = [...battle.results].sort((a,b) => b.points - a.points);
-        const winner = data.find(l => l.name.toLowerCase() === sorted[0].name.toLowerCase()) || { avatar: '🏆', name: sorted[0].name };
+        const winner = data.find(l => l.name.toLowerCase() === sorted[0].name.toLowerCase()) || { avatar:'🏆', name:sorted[0].name };
 
         return `
         <article class="battle-card" data-battle="${battle.week}" tabindex="0" role="button" aria-expanded="false">
             <div class="battle-eyebrow">
-                <span>Rodada ${battle.week}</span>
+                <span>Rodada ${toRoman(battle.week)}</span>
                 ${!battle.medievalActive ? `<span class="locked-mark">— sem pts medievais</span>` : ''}
             </div>
             <h3 class="battle-name">${escHTML(battle.name)}</h3>
             <div class="battle-winner">
-                <span aria-hidden="true">${winner.avatar}</span>
-                <div>
-                    <div class="crown">Vencedor</div>
-                    <div class="name">${escHTML(winner.name)} <span style="color:var(--gold-bright)">${fmt2(sorted[0].points)}</span></div>
+                <span class="crown-icon" aria-hidden="true">${winner.avatar}</span>
+                <div style="flex:1">
+                    <div class="crown">⚔ Vencedor</div>
+                    <div class="name">${escHTML(winner.name)}<span class="pts">${fmt2(sorted[0].points)}</span></div>
                 </div>
             </div>
             <div class="battle-results" id="battle-${battle.week}">
@@ -1708,7 +2126,7 @@ function renderBattles(BATTLES, data) {
                     if (idx === sorted.length - 1) badges.push('Lanterna');
                     return `
                     <div class="result-row ${idx === 0 ? 'is-1st' : ''}">
-                        <div class="result-rank">${idx+1}</div>
+                        <div class="result-rank">${toRoman(idx+1)}</div>
                         <div class="result-emoji" aria-hidden="true">${lord.avatar}</div>
                         <div>
                             <div class="result-name">${escHTML(r.name)}</div>
@@ -1727,10 +2145,7 @@ function renderBattles(BATTLES, data) {
     $$('.battle-card', root).forEach(card => {
         card.addEventListener('click', () => toggleBattle(card));
         card.addEventListener('keydown', e => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggleBattle(card);
-            }
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleBattle(card); }
         });
     });
 }
@@ -1751,17 +2166,17 @@ function renderAchievements(data, lastRound) {
 
     if (locked) {
         root.innerHTML = `
-        <div class="notice"><div class="notice-mark">i</div><div>Títulos e conquistas ativam na <strong>Rodada ${CONFIG.medievalStart}</strong>. Todas as conquistas começam do zero a partir dessa rodada.</div></div>
+        <div class="notice">Títulos e conquistas ativam na <strong>Rodada ${CONFIG.medievalStart}</strong>. Todas as glórias começam do zero a partir dessa rodada.</div>
         ${[...data].sort((a,b) => a.name.localeCompare(b.name)).map(lord => `
-            <article class="lord-card" style="opacity:.55">
+            <article class="lord-card" style="opacity:.5">
                 <div class="lord-row">
-                    <div class="lord-rank">${lord.avatar}</div>
+                    <div class="lord-rank" style="font-size:42px">${lord.avatar}</div>
                     <div class="lord-id">
                         <div class="lord-name">${escHTML(lord.name)}</div>
                         <div class="lord-tags">${buildAllianceTag(lord)}</div>
                     </div>
                     <div class="lord-points">
-                        <div class="total-points" style="color:var(--text-faint)">—</div>
+                        <div class="total-points" style="background:none;-webkit-text-fill-color:var(--text-faint);color:var(--text-faint);">—</div>
                         <div class="points-meta">Aguardando R${CONFIG.medievalStart}</div>
                     </div>
                 </div>
@@ -1778,15 +2193,15 @@ function renderAchievements(data, lastRound) {
         podio: top('podioCalc'),
     };
 
-    let html = `<div class="notice"><div class="notice-mark">✓</div><div>Títulos e conquistas ativos desde a <strong>Rodada ${CONFIG.medievalStart}</strong>.</div></div>`;
-    html += `<div class="featured-eyebrow">— Destaques da Temporada —</div>`;
+    let html = `<div class="notice"><strong>Glórias ativas</strong> desde a Rodada ${CONFIG.medievalStart}.</div>`;
+    html += `<div class="featured-eyebrow">Destaques da Temporada</div>`;
 
     const featured = [
-        ['gold',      'Rei das Vitórias',       m.mvp,         'mvpCalc',         'mvp',         'MVP'],
-        ['danger',    'Mestre da Destruição',   m.mitada,      'mitadaCalc',      'mitada',      'Mitada'],
-        ['anel',      'A Fênix Imortal',        m.recuperacao, 'recuperacaoCalc', 'recuperacao', 'Recuperação'],
-        ['northclaw', 'Senhor do Massacre',     m.massacre,    'massacreCalc',    'massacre',    'Massacre'],
-        ['success',   'Senhor dos Pódios',      m.podio,       'podioCalc',       'podio',       'Pódio'],
+        ['gold',      'Rei das Vitórias',     m.mvp,         'mvpCalc',         'mvp',         'MVP'],
+        ['danger',    'Mestre da Destruição', m.mitada,      'mitadaCalc',      'mitada',      'Mitada'],
+        ['anel',      'A Fênix Imortal',      m.recuperacao, 'recuperacaoCalc', 'recuperacao', 'Recuperação'],
+        ['northclaw', 'Senhor do Massacre',   m.massacre,    'massacreCalc',    'massacre',    'Massacre'],
+        ['success',   'Senhor dos Pódios',    m.podio,       'podioCalc',       'podio',       'Pódio'],
     ];
     featured.forEach(([cls, eyebrow, lord, key, titleType, label]) => {
         if (!lord || lord[key] === 0) return;
@@ -1795,18 +2210,18 @@ function renderAchievements(data, lastRound) {
             <div class="hall-eyebrow">${escHTML(eyebrow)}</div>
             <div class="hall-emoji" aria-hidden="true">${lord.avatar}</div>
             <div class="hall-name">${escHTML(lord.name)}</div>
-            <div class="hall-stat">${lord[key]}× ${label}</div>
+            <div class="hall-stat"><strong>${lord[key]}×</strong> ${label}</div>
             <div class="hall-title">${escHTML(getTitle(titleType, lord[key]))}</div>
         </div>`;
     });
 
     html += `<hr class="divider">`;
-    html += `<div class="featured-eyebrow">— Todos os Títulos —</div>`;
+    html += `<div class="featured-eyebrow">Todos os Títulos</div>`;
 
     html += data.map(lord => `
         <article class="lord-card">
             <div class="lord-row">
-                <div class="lord-rank">${lord.avatar}</div>
+                <div class="lord-rank" style="font-size:42px">${lord.avatar}</div>
                 <div class="lord-id">
                     <div class="lord-name">${escHTML(lord.name)}</div>
                     <div class="lord-tags">
@@ -1827,11 +2242,11 @@ function renderAchievements(data, lastRound) {
 function renderRules() {
     $('#rules-content').innerHTML = `
     <div class="rule-warn">
-        <strong>Regra especial desta versão:</strong> Pontos medievais, conquistas e títulos só são contabilizados a partir da <strong>Rodada ${CONFIG.medievalStart}</strong>. As rodadas 1–${CONFIG.medievalStart-1} contam normalmente no Cartola, mas não geram pontos medievais nem títulos.
+        <strong>Regra Real:</strong> Pontos medievais, conquistas e títulos só são contabilizados a partir da <strong>Rodada ${CONFIG.medievalStart}</strong>. As rodadas I a ${toRoman(CONFIG.medievalStart-1)} contam normalmente no Cartola, mas não geram pontos medievais nem títulos.
     </div>
 
     <div class="rules-block">
-        <div class="rules-block-title">Alianças</div>
+        <div class="rules-block-title">⚔ Alianças ⚔</div>
         <table class="rules-table">
             <thead><tr><th>Aliança</th><th>Membros</th></tr></thead>
             <tbody>
@@ -1840,13 +2255,13 @@ function renderRules() {
                 <tr><td><span class="name" style="color:var(--northclaw-bright)">North Claw</span></td><td>CEEC, Otopatamá</td></tr>
             </tbody>
         </table>
-        <div style="font-family:var(--font-display);font-style:italic;font-size:13px;color:var(--text-muted);margin-top:var(--sp-3);line-height:1.5">
+        <div style="font-family:var(--f-body);font-style:italic;font-size:14px;color:var(--text-muted);margin-top:var(--sp-3);line-height:1.5;text-align:center">
             A pontuação da aliança é a soma dos pontos totais (Cartola + Medieval) de todos os membros.
         </div>
     </div>
 
     <div class="rules-block">
-        <div class="rules-block-title">Grupo I — Conquistas por Rodada</div>
+        <div class="rules-block-title">⚔ Grupo I — Conquistas ⚔</div>
         <table class="rules-table">
             <thead><tr><th>Conquista</th><th>Critério</th><th style="text-align:right">Pts</th></tr></thead>
             <tbody>
@@ -1861,7 +2276,7 @@ function renderRules() {
     </div>
 
     <div class="rules-block">
-        <div class="rules-block-title">Grupo II — Escada de Mitada</div>
+        <div class="rules-block-title">⚔ Grupo II — Mitada ⚔</div>
         <table class="rules-table">
             <thead><tr><th>Faixa</th><th>Critério</th><th style="text-align:right">Bônus</th><th style="text-align:right">Total</th></tr></thead>
             <tbody>
@@ -1873,14 +2288,14 @@ function renderRules() {
     </div>
 
     <div class="rules-block">
-        <div class="rules-block-title">Os Nove Reinos</div>
+        <div class="rules-block-title">⚔ Os IX Reinos ⚔</div>
         <table class="rules-table">
             <thead><tr><th>Reino</th><th>Aliança</th><th></th></tr></thead>
             <tbody>
                 ${LORDS.map(l => `<tr>
                     <td><span class="name">${escHTML(l.name)}</span></td>
                     <td>${buildAllianceTag(l)}</td>
-                    <td style="text-align:right;font-size:18px">${l.avatar}</td>
+                    <td style="text-align:right;font-size:20px">${l.avatar}</td>
                 </tr>`).join('')}
             </tbody>
         </table>
@@ -1890,8 +2305,6 @@ function renderRules() {
 /* =========================================================
    13. NAVEGAÇÃO
    ========================================================= */
-const _rendered = new Set(['ranking']); // ranking já é renderizado no init
-
 function switchTab(name) {
     $$('.tab-content').forEach(t => t.classList.remove('is-active'));
     $$('.nav-btn').forEach(b => {
@@ -1900,18 +2313,6 @@ function switchTab(name) {
         b.setAttribute('aria-selected', active);
     });
     $('#tab-' + name).classList.add('is-active');
-
-    // lazy render: só renderiza a aba na primeira visita
-    if (!_rendered.has(name) && window._appData) {
-        const { data, BATTLES, lastRound } = window._appData;
-        if (name === 'aliancas')     renderAliancas(data);
-        if (name === 'medieval')     renderMedieval(data, lastRound);
-        if (name === 'battles')      renderBattles(BATTLES, data);
-        if (name === 'achievements') renderAchievements(data, lastRound);
-        if (name === 'rules')        renderRules();
-        _rendered.add(name);
-    }
-
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -1930,19 +2331,18 @@ async function init() {
         const BATTLES = buildBattles(rows);
         if (!BATTLES.length) throw new Error('Nenhuma rodada encontrada em dados.csv.');
         const lastRound = Math.max(...BATTLES.map(b => b.week));
+
+        $('#current-round').textContent = toRoman(lastRound);
+        $('#last-updated').textContent = new Date().toLocaleDateString('pt-BR');
+
         const data = processAll(BATTLES);
-
-        // guarda dados para lazy rendering das outras abas
-        window._appData = { data, BATTLES, lastRound };
-
-        $('#current-round').textContent = lastRound;
-        $('#last-updated').textContent = 'Atualizado em ' + new Date().toLocaleDateString('pt-BR');
-
-        // renderiza só a aba inicial; o resto é lazy (ver switchTab)
         renderRanking(data, lastRound);
-        renderRules(); // leve, sem dados externos — renderizar logo
+        renderAliancas(data);
+        renderMedieval(data, lastRound);
+        renderBattles(BATTLES, data);
+        renderAchievements(data, lastRound);
+        renderRules();
 
-        // listeners de navegação
         $$('.nav-btn').forEach(btn => {
             btn.addEventListener('click', () => switchTab(btn.dataset.tab));
         });
