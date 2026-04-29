@@ -365,7 +365,6 @@
             grid-template-columns:36px 44px 1fr auto;
             gap:11px;
             align-items:center;
-            padding-right:64px; /* reserva pra tag de aliança no canto */
             min-height:48px;
         }
         .rank-pos {
@@ -974,7 +973,6 @@ function renderRanking(data, lastRound) {
         return `
         <div class="rank-card${isLeader ? ' leader' : ''}" style="--house-color:${lord.color}" onclick="toggleRank('r${i}')">
             ${isLeader ? '<div class="rank-crown">👑</div>' : ''}
-            <span class="rank-tag-corner tag-${lord.alliance}">${al.icon} ${al.label}</span>
 
             <div class="rank-head">
                 <div class="rank-pos ${posClass}">${pos}</div>
