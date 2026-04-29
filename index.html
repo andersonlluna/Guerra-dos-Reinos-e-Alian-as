@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#0d0d1a">
-    <title>⚔️ Guerra dos Reinos e Alianças</title>
+    <title>Guerra dos Reinos e Alianças</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
@@ -80,40 +80,19 @@
             box-shadow:0 2px 30px rgba(0,0,0,0.9), 0 1px 0 rgba(200,134,10,0.12) inset;
         }
         .header-title {
-            font-family:'Cinzel',serif; font-size:1.4em; font-weight:900;
+            font-family:'Cinzel',serif; font-size:1.7em; font-weight:900;
             color:var(--amber-light); text-align:center; letter-spacing:0.05em;
             text-shadow:0 0 24px rgba(232,160,32,0.25), 1px 1px 3px rgba(0,0,0,0.9);
-            line-height:1.2;
+            line-height:1.15;
         }
-        .header-badges {
-            display:flex; justify-content:center; gap:14px; margin-top:7px; flex-wrap:wrap;
-        }
-        .header-badge {
-            font-size:0.8em; font-family:'Cinzel',serif;
-            padding:3px 10px; border-radius:3px;
-            letter-spacing:0.04em; font-weight:700;
-        }
-        .badge-bastardos  { background:rgba(90,100,112,0.2); border:1px solid rgba(176,190,197,0.4); color:#B0BEC5; }
-        .badge-anel       { background:rgba(28,78,58,0.2);  border:1px solid rgba(46,122,88,0.5);  color:#2E7A58; }
-        .badge-northclaw  { background:rgba(45,27,78,0.2);  border:1px solid rgba(168,85,247,0.5); color:#C084FC; }
         .header-sub {
-            font-family:'Crimson Text',serif; font-size:0.85em; color:var(--text-muted);
-            text-align:center; margin-top:5px; font-style:italic;
+            font-family:'Cinzel',serif; font-size:0.85em; color:var(--text-muted);
+            text-align:center; margin-top:8px; letter-spacing:0.06em;
         }
         #current-round {
-            font-family:'Cinzel',serif; font-style:normal; font-weight:900;
-            font-size:1.1em; color:#FFD700;
-            background:rgba(200,134,10,0.18);
-            border:1px solid rgba(232,160,32,0.55);
-            border-radius:5px; padding:1px 8px;
-            display:inline-block;
-            text-shadow:0 0 10px rgba(255,215,0,0.6);
-            box-shadow:0 0 10px rgba(200,134,10,0.25);
-            animation:roundPulse 2.5s ease-in-out infinite;
-        }
-        @keyframes roundPulse {
-            0%,100% { box-shadow:0 0 6px rgba(200,134,10,0.2); text-shadow:0 0 8px rgba(255,215,0,0.4); }
-            50%      { box-shadow:0 0 18px rgba(200,134,10,0.6); text-shadow:0 0 16px rgba(255,215,0,0.9); }
+            font-family:'Cinzel',serif; font-weight:900;
+            color:var(--amber-light);
+            padding:0 2px;
         }
 
         /* CONTENT */
@@ -470,13 +449,8 @@
 </div>
 
 <div class="header">
-    <div class="header-title">⚔️ Guerra dos Reinos e Alianças ⚔️</div>
-    <div class="header-badges">
-        <span class="header-badge badge-bastardos">🗡️ Bastardos</span>
-        <span class="header-badge badge-anel">💍 Sociedade do Anel</span>
-        <span class="header-badge badge-northclaw">🦅 North Claw</span>
-    </div>
-    <div class="header-sub">⚔️ Rodada <span id="current-round">—</span> <span style="font-size:0.8em;opacity:0.7">/ 38</span> &nbsp;·&nbsp; Temporada 2026</div>
+    <div class="header-title">Guerra dos Reinos e Alianças</div>
+    <div class="header-sub">Rodada <span id="current-round">—</span> / 38</div>
 </div>
 
 <div class="content">
