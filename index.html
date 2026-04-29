@@ -471,7 +471,7 @@
             justify-content:center;
             gap:18px;
             margin-bottom:14px;
-            font-size:1.05em;
+            font-size:1.2em;
             font-weight:600;
             flex-wrap:wrap;
         }
@@ -548,6 +548,20 @@
         .hall-name { font-family:'Cinzel',serif; font-size:1.3em; font-weight:900; margin:5px 0; }
         .hall-achievement { font-size:1.1em; font-weight:600; margin:5px 0; }
         .hall-title { font-size:0.9em; font-style:italic; margin-top:6px; opacity:0.8; }
+
+        /* Rótulo pedagógico — explica que a grid abaixo é a origem dos pontos/título */
+        .stats-explain {
+            margin-top:14px;
+            margin-bottom:10px;
+            padding-bottom:10px;
+            text-align:center;
+            font-family:'Cinzel',serif;
+            font-size:0.85em;
+            color:var(--amber-dim);
+            letter-spacing:0.08em;
+            text-transform:uppercase;
+            border-bottom:1px solid rgba(200,134,10,0.12);
+        }
 
         /* RULES */
         .rules-section { margin-bottom:22px; }
@@ -1091,7 +1105,6 @@ function renderMedieval(data, lastRound) {
                 <div class="avatar" style="opacity:0.5">${lord.avatar}</div>
                 <div class="lord-info">
                     <div class="lord-name" style="color:var(--text-muted)">${lord.name}</div>
-                    ${allianceTag(lord)}
                     <div class="lord-title-text">📰 Escudeiro Sem Nome</div>
                 </div>
             </div>
@@ -1110,7 +1123,6 @@ function renderMedieval(data, lastRound) {
                     <div class="avatar">${lord.avatar}</div>
                     <div class="lord-info">
                         <div class="lord-name">${lord.name}</div>
-                        ${allianceTag(lord)}
                         <div class="lord-title-text">${lord.currentTitle}</div>
                     </div>
                 </div>
@@ -1118,6 +1130,7 @@ function renderMedieval(data, lastRound) {
                     <div class="total-points" style="color:${mc}">${ms}${lord.medievalPoints}</div>
                     <div style="font-size:0.88em;color:var(--amber);font-style:italic;">Pontos Medievais</div>
                 </div>
+                <div class="stats-explain">Como esses pontos foram ganhos</div>
                 <div class="stats-grid">
                     <div class="stat-item"><div class="stat-label">🏆 MVP</div><div class="stat-value">${lord.mvp}x</div></div>
                     <div class="stat-item"><div class="stat-label">💀 Mitada</div><div class="stat-value">${lord.mitada}x</div></div>
@@ -1189,7 +1202,6 @@ function renderAchievements(data, lastRound) {
                 <div class="avatar" style="opacity:0.5">${lord.avatar}</div>
                 <div class="lord-info">
                     <div class="lord-name" style="color:var(--text-muted)">${lord.name}</div>
-                    ${allianceTag(lord)}
                     <div class="lord-title-text">📰 Escudeiro Sem Nome</div>
                 </div>
             </div>
@@ -1222,10 +1234,10 @@ function renderAchievements(data, lastRound) {
                 <div class="avatar">${lord.avatar}</div>
                 <div class="lord-info">
                     <div class="lord-name">${lord.name}</div>
-                    ${allianceTag(lord)}
                     <div class="lord-title-text">${lord.currentTitle}</div>
                 </div>
             </div>
+            <div class="stats-explain">Conquistas que geraram este título</div>
             <div class="stats-grid">
                 ${lord.mvpCalc>0?`<div class="stat-item" style="background:rgba(200,134,10,0.08)"><div class="stat-label">🏆 MVP</div><div class="stat-value">${lord.mvpCalc}x</div><div style="font-size:0.72em;color:var(--amber);margin-top:2px">${getTitle('mvp',lord.mvpCalc)}</div></div>`:''}
                 ${lord.mitadaCalc>0?`<div class="stat-item" style="background:rgba(231,76,60,0.08)"><div class="stat-label">💀 Mitada</div><div class="stat-value">${lord.mitadaCalc}x</div><div style="font-size:0.72em;color:#e74c3c;margin-top:2px">${getTitle('mitada',lord.mitadaCalc)}</div></div>`:''}
