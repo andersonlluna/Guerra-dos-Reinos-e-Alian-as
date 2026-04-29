@@ -24,7 +24,7 @@
             --border-subtle: rgba(200,134,10,0.22);
             --text: #E2D8CC;
             --text-bright: #F2EDE6;
-            --text-muted: #9C9AB0;
+            --text-muted: #B5B0C0;
             /* Alianças */
             --bastardos: #5A6470;
             --bastardos-light: #B0BEC5;
@@ -263,11 +263,10 @@
         .alliance-name.anel       { color:#3A8060; }
         .alliance-name.northclaw  { color:#C084FC; }
         .alliance-members-line {
-            font-size:0.82em;
+            font-size:0.95em;
             color:var(--text-muted);
-            margin-top:3px;
-            line-height:1.35;
-            font-style:italic;
+            margin-top:4px;
+            line-height:1.4;
             overflow:hidden;
             text-overflow:ellipsis;
             display:-webkit-box;
@@ -288,15 +287,13 @@
         .alliance-total-num.anel      { color:var(--anel-light); }
         .alliance-total-num.northclaw { color:var(--northclaw-light); }
         .alliance-avg-line {
-            font-size:0.78em;
+            font-size:0.9em;
             color:var(--text-muted);
-            margin-top:5px;
-            font-style:italic;
+            margin-top:6px;
             letter-spacing:0.02em;
         }
         .alliance-avg-num {
             font-family:'Cinzel',serif;
-            font-style:normal;
             color:var(--amber);
             font-weight:700;
         }
@@ -314,11 +311,11 @@
             margin-top:10px;
             padding:6px;
             font-family:'Cinzel',serif;
-            font-size:0.75em;
+            font-size:0.85em;
             color:var(--text-muted);
-            letter-spacing:0.12em;
+            letter-spacing:0.1em;
             text-transform:uppercase;
-            opacity:0.65;
+            opacity:0.75;
         }
 
         /* Linha de membro — mantém estrutura V1, sem mudanças */
@@ -332,7 +329,7 @@
         .member-avatar { font-size:2em; flex-shrink:0; }
         .member-info { flex:1; }
         .member-name { font-family:'Cinzel',serif; font-size:1.05em; font-weight:700; color:var(--text-bright); }
-        .member-title { font-size:0.85em; color:var(--amber-dim); font-style:italic; }
+        .member-title { font-size:0.95em; color:var(--amber-dim); }
         .member-pts { text-align:right; }
         .member-pts-main { font-family:'Cinzel',serif; font-size:1.25em; font-weight:700; color:var(--amber-light); }
         .member-pts-sub { font-size:0.8em; color:var(--text-muted); }
@@ -386,7 +383,7 @@
         .rank-info { min-width:0; }
         .rank-name {
             font-family:'Cinzel',serif;
-            font-size:1.05em;
+            font-size:1.15em;
             font-weight:700;
             color:var(--text-bright);
             line-height:1.2;
@@ -395,11 +392,10 @@
             white-space:nowrap;
         }
         .rank-house {
-            font-size:0.82em;
+            font-size:0.95em;
             color:var(--text-muted);
-            font-style:italic;
-            margin-top:3px;
-            line-height:1.2;
+            margin-top:4px;
+            line-height:1.25;
         }
         .rank-totals {
             text-align:right;
@@ -413,15 +409,13 @@
             color:var(--amber-light);
         }
         .rank-avg-line {
-            font-size:0.78em;
+            font-size:0.9em;
             color:var(--text-muted);
-            margin-top:5px;
-            font-style:italic;
+            margin-top:6px;
             letter-spacing:0.02em;
         }
         .rank-avg-num {
             font-family:'Cinzel',serif;
-            font-style:normal;
             color:var(--amber);
             font-weight:700;
         }
@@ -450,13 +444,13 @@
             z-index:2;
         }
 
-        /* Título do reino — assinatura no rodapé do header */
+        /* Título do reino — assinatura no rodapé do header (mantém itálico — é cerimonial) */
         .rank-title-bar {
             margin-top:12px;
             padding-top:10px;
             border-top:1px solid rgba(200,134,10,0.12);
             font-family:'Crimson Text',serif;
-            font-size:0.92em;
+            font-size:1.0em;
             color:var(--amber);
             font-style:italic;
             text-align:center;
@@ -477,14 +471,14 @@
             justify-content:center;
             gap:18px;
             margin-bottom:14px;
-            font-size:0.95em;
+            font-size:1.05em;
             font-weight:600;
             flex-wrap:wrap;
         }
         .rank-breakdown .b-cartola { color:#5A9870; }
         .rank-breakdown .b-medieval-pos  { color:var(--copper-light); }
         .rank-breakdown .b-medieval-neg  { color:#A85050; }
-        .rank-breakdown .b-medieval-zero { color:var(--text-muted); font-style:italic; }
+        .rank-breakdown .b-medieval-zero { color:var(--text-muted); }
 
         .rank-stats-grid {
             display:grid;
@@ -498,8 +492,8 @@
             border-radius:4px;
             text-align:center;
         }
-        .rank-stat-label { font-size:0.78em; color:var(--text-muted); margin-bottom:3px; }
-        .rank-stat-value { font-family:'Cinzel',serif; font-size:1.15em; font-weight:700; color:var(--text-bright); }
+        .rank-stat-label { font-size:0.9em; color:var(--text-muted); margin-bottom:4px; }
+        .rank-stat-value { font-family:'Cinzel',serif; font-size:1.3em; font-weight:700; color:var(--text-bright); }
         .rank-stat-value.negative { color:#A85050; }
 
         .rank-expand-btn {
@@ -507,11 +501,11 @@
             margin-top:10px;
             padding:6px;
             font-family:'Cinzel',serif;
-            font-size:0.75em;
+            font-size:0.85em;
             color:var(--text-muted);
-            letter-spacing:0.12em;
+            letter-spacing:0.1em;
             text-transform:uppercase;
-            opacity:0.65;
+            opacity:0.75;
         }
 
 
@@ -591,7 +585,7 @@
             flex:1; background:transparent; border:none; color:#3A3648;
             padding:8px 4px 10px; cursor:pointer;
             display:flex; flex-direction:column; align-items:center; gap:4px;
-            font-family:'Cinzel',serif; font-size:0.72em; font-weight:700;
+            font-family:'Cinzel',serif; font-size:0.85em; font-weight:700;
             letter-spacing:0.04em; transition:color 0.2s; min-height:62px;
         }
         .nav-btn.active { color:var(--amber); }
